@@ -1,0 +1,16 @@
+{
+    "name": "hyperboxgames.hcbui.editor",
+    "rootNamespace": "HCB.UI.Editor",
+    "references": [
+        "GUID:f923956656c664354a6ec9b213df17dc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
