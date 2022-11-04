@@ -20,7 +20,7 @@ public class Player : SplineCharacter
         ? _movementController = GetComponent<SplineCharacterMovementController>()
         : _movementController;
 
-    private const string UPGRADE_PARTICLE_ID = "UpgradeParticle";
+    //private const string UPGRADE_PARTICLE_ID = "UpgradeParticle";
     
     protected override void OnEnable()
     {
@@ -30,7 +30,7 @@ public class Player : SplineCharacter
         base.OnEnable();
         
        HCB.Core.EventManager.OnPlayerFailed.AddListener(OnLevelEnd);
-        HCB.Core.EventManager.OnPlayerUpgraded.AddListener((() => CreateParticle(UPGRADE_PARTICLE_ID)));
+        //HCB.Core.EventManager.OnPlayerUpgraded.AddListener((() => CreateParticle(UPGRADE_PARTICLE_ID)));
         HCB.Core.EventManager.OnEnteredEndGame.AddListener(SetSpeed);
 
         
