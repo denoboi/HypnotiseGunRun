@@ -48,6 +48,7 @@ public class ProjectileShoot : MonoBehaviour
 
         LevelManager.Instance.OnLevelStart.AddListener(() => Run.After(1,()=>_isGameStarted = true));
         GameManager.Instance.OnGameEnd.AddListener(() => _isGameStarted = false);
+        
         //HCB.Core.EventManager.OnPlayerSuccess.AddListener(()=> _isGameEnd = true);
         
     }
@@ -61,10 +62,15 @@ public class ProjectileShoot : MonoBehaviour
        // HCB.Core.EventManager.OnPlayerSuccess.RemoveListener(()=> _isGameEnd = true);
     }
 
+    private void Start()
+    {
+        SpawnProjectile();
+    }
+
 
     private void Update()
     {
-        SpawnProjectile();
+        
         ProjectileSpawnRate();
     }
 
@@ -75,19 +81,19 @@ public class ProjectileShoot : MonoBehaviour
 
     private void SpawnProjectile()
     {
-        if (!_isGameStarted)
-            return;
+        // if (!_isGameStarted)
+        //     return;
+        //
+        // if (_isGameEnd)
+        //     return;
+        //
+        // if (Player.Instance.IsWin)
+        //     return;
+        //
+        // _timer += Time.deltaTime;
 
-        if (_isGameEnd)
-            return;
-
-        if (Player.Instance.IsWin)
-            return;
-
-        _timer += Time.deltaTime;
-
-        if (_timer >= SpawnRate)
-        {
+        // if (_timer >= SpawnRate)
+        // {
             ProjectileCreator.CreateProjectile();
 
             // if (PlayerSpreadShot.IsSpreadShotEnabled)
@@ -95,8 +101,8 @@ public class ProjectileShoot : MonoBehaviour
             //     PlayerSpreadShot.SpreadShotSpawn();
             // }
 
-            HCB.Core.EventManager.OnShoot.Invoke();
-            _timer = 0;
-        }
+        //     HCB.Core.EventManager.OnShoot.Invoke();
+        //     _timer = 0;
+        // }
     }
 }

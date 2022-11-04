@@ -26,6 +26,8 @@ public class ProjectileCreator : MonoBehaviour
         Projectile projectile = PoolingSystem.Instance.InstantiateAPS(PROJECTILE_POOL_ID, _projectileSpawnPoint.position)
             .GetComponentInChildren<Projectile>();
         
+        //projectile.transform.SetParent(transform);
+        
         projectile.Initialize(Vector3.forward);
         
         return projectile;

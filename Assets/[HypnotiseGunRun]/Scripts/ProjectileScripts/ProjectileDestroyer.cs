@@ -47,7 +47,7 @@ public class ProjectileDestroyer : MonoBehaviour
     private void StartDestroy()
     {
        // Run.After(PlayerFireRange.Instance.DestroyTime, DestroyProjectile); //update yerine boyle yap
-       Run.After(DestroyTime, ()=> PoolingSystem.Instance.DestroyAPS(gameObject));
+      // Run.After(DestroyTime, ()=> PoolingSystem.Instance.DestroyAPS(gameObject));
     }
 
    
