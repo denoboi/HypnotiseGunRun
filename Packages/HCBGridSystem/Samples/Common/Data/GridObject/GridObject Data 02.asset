@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41bdc6673c63d34c92c6eb5eecc1bb5, type: 3}
+  m_Name: GridObject Data 02
+  m_EditorClassIdentifier: 
+  Name: GridObject 02
+  Prefab: {fileID: 3371941572105783416, guid: e4639b5fb439e214da732bbe7e89f982, type: 3}
+  ID: 68FQSJ19TK

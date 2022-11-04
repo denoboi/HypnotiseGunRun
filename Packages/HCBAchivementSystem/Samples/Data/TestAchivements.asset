@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a6a8e06008f4e90b4444bfb701db1e, type: 3}
+  m_Name: TestAchivements
+  m_EditorClassIdentifier: 
+  Achivements:
+  - AchivementID: Test Achivement
+    AchivementDescription: This is a test
+    RewardType: 0
+    ExchangeType: 1
+    CurrencyRewardAmount: 50
+    SkinID: 
+    UnlockTreashold: 1
+    AchivementUnlockCondition: 2
+    currentValue: 0
+    IsComplete: 0
+    IsCollected: 0

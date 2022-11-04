@@ -1,0 +1,22 @@
+{
+  "name": "com.hyperboxgames.achivementsystem",
+  "version": "1.0.0",
+  "displayName": "HCB Achivement System",
+  "description": "This is a package compitible with Hyper Casual Base",
+  "unity": "2020.3",
+  "unityRelease": "7f1",
+  "keywords": [
+    "Namespace: HCB"
+  ],
+  "author": "Hyperbox Games <ugurtanerkazan@hyperboxgames.com> (https://www.hyperboxgames.com)",
+  "publishConfig": {
+    "registry": "ttp://localhost:4873"
+  },
+  "hideInEditor": false,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "type": "tool"
+}

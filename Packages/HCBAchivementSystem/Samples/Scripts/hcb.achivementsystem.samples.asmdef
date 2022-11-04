@@ -1,0 +1,21 @@
+{
+    "name": "hcb.achivementsystem.samples",
+    "rootNamespace": "HCB.AchivementSystem.Samples",
+    "references": [
+        "GUID:1ed43ffede3f849299203b4776a97add",
+        "GUID:02f0cfefae8b44556bc0c79177ae623d",
+        "GUID:f923956656c664354a6ec9b213df17dc",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:be129bff6886447da931575b80b2cac8",
+        "GUID:f7dd1d4f9062147359bc921ef251aa1c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

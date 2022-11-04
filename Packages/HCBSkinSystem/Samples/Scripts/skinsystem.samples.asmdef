@@ -1,0 +1,18 @@
+{
+    "name": "skinsystem.samples",
+    "rootNamespace": "HCB.SkinSystem.Samples",
+    "references": [
+        "GUID:be129bff6886447da931575b80b2cac8",
+        "GUID:f923956656c664354a6ec9b213df17dc",
+        "GUID:02f0cfefae8b44556bc0c79177ae623d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
