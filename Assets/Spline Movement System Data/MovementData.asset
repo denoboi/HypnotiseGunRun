@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 217a90ea8832740c8b7ab261914d3020, type: 3}
-  m_Name: Level Data
+  m_Script: {fileID: 11500000, guid: a6259dad7554dbe4b89c1e2513c9a49f, type: 3}
+  m_Name: MovementData
   m_EditorClassIdentifier: 
-  Levels:
-  - LevelTypes: 
-    LoadLevelID: Level-Development
+  DefaultSpeed: 6
+  SlideSpeed: 8
+  SpeedBlendDuration: 1

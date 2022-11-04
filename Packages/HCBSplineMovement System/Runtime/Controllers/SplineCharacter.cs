@@ -41,7 +41,7 @@ namespace HCB.SplineMovementSystem
         public UnityEvent OnSlideStop = new UnityEvent();
         #endregion
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             if (Managers.Instance == null)
                 return;
@@ -51,7 +51,7 @@ namespace HCB.SplineMovementSystem
             GameManager.Instance.OnStageFail.AddListener(OnLevelEnd);            
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             if (Managers.Instance == null)
                 return;
@@ -128,7 +128,7 @@ namespace HCB.SplineMovementSystem
             CanMoveForward = true;
         }
 
-        private void OnLevelEnd()
+        protected virtual void OnLevelEnd()
         {
             IsControlable = false;
             CanMoveForward = false;

@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Packages/com.hyperboxgames.hcbui/Samples/Scenes/HCBUI.unity
     guid: 701998241e5184038a46af49daa36a4e
   - enabled: 1
-    path: Assets/[Game]/Levels/Level-Development.unity
+    path: Assets/[HypnotiseGunRun]/Levels/Level-Development.unity
     guid: 63562e2866d6042f9a0cd68a8482b663
   - enabled: 1
     path: Packages/com.hyperboxgames.hcbsplinemovementsystem/Samples/Scenes/01 Level

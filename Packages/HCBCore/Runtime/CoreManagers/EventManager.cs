@@ -15,6 +15,20 @@ namespace HCB.Core
         public static StringEvet OnStatUpdated = new StringEvet();
         public static UnityEvent OnRemoteUpdated = new UnityEvent();
         public static AnalyticEvent OnLogEvent = new AnalyticEvent();
+        
+        public static UnityEvent OnPlayerFailed = new UnityEvent();
+
+        public static UnityEvent OnFireRateGateInteracted = new UnityEvent();
+        public static UnityEvent OnSpreadShotGateInteracted = new UnityEvent();
+        public static UnityEvent OnFireRangeGateInteracted = new UnityEvent();
+        
+        public static UnityEvent OnMoneyEarned = new UnityEvent();
+        public static UnityEvent OnEnteredEndGame = new UnityEvent();
+        public static UnityEvent OnShoot = new UnityEvent();
+        public static UnityEvent OnPlayerUpgraded = new UnityEvent();
+        
+        public static UnityEvent OnReachedChest = new UnityEvent();
+
 
         #region Editor
         public static UnityEvent OnLevelDataChange = new UnityEvent();

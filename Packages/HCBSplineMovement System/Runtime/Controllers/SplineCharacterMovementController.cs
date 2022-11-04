@@ -37,7 +37,7 @@ namespace HCB.SplineMovementSystem
         private bool _applyRotationY;
         private bool _applyRotationZ;
 
-        private float _currentSpeed;
+        public float CurrentSpeed;
         private void Awake()
         {
             SetupDefaultValues();
@@ -63,7 +63,7 @@ namespace HCB.SplineMovementSystem
             if (!SplineCharacter.CanMoveForward)
                 return;
             
-            SplineFollower.Move(_currentSpeed * Time.deltaTime);
+            SplineFollower.Move(CurrentSpeed * Time.deltaTime);
         }
         public void Jump(float jumpForce)
         {           
@@ -110,7 +110,7 @@ namespace HCB.SplineMovementSystem
         private void SetSpeed(float value)
         {
             DOTween.Kill(_speedTweenId);
-            DOTween.To(() => _currentSpeed, x => _currentSpeed = x, value, MovementData.SpeedBlendDuration).SetId(_speedTweenId);
+            DOTween.To(() => CurrentSpeed, x => CurrentSpeed = x, value, MovementData.SpeedBlendDuration).SetId(_speedTweenId);
         }      
 
         private void SetSplineFollowerApplyRotation(bool x, bool y, bool z) 
@@ -128,7 +128,7 @@ namespace HCB.SplineMovementSystem
 
         private void SetupDefaultValues() 
         {
-            _currentSpeed = MovementData.DefaultSpeed;
+            CurrentSpeed = MovementData.DefaultSpeed;
 
             _applyRotationX = SplineFollower.motion.applyRotationX;
             _applyRotationY = SplineFollower.motion.applyRotationY;

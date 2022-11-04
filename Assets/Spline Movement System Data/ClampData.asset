@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 217a90ea8832740c8b7ab261914d3020, type: 3}
-  m_Name: Level Data
+  m_Script: {fileID: 11500000, guid: 6fd1b1e925c6874469e24eb666f9140f, type: 3}
+  m_Name: ClampData
   m_EditorClassIdentifier: 
-  Levels:
-  - LevelTypes: 
-    LoadLevelID: Level-Development
+  MinRotateAngle: -30
+  MaxRotateAngle: 30
+  MovementWidth: 4
+  RotateSpeed: 10
+  RecoverySpeed: 15
+  Sensitivity: 2.5
