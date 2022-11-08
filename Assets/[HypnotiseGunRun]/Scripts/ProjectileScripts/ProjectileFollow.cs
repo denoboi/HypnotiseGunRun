@@ -12,6 +12,6 @@ public class ProjectileFollow : MonoBehaviour
     private void Update()
     {
         if (IsFollow && Target != null)
-            transform.DOLocalMove(Target.localPosition, 0.3f);
+            transform.DOMove(Target.position, 0.3f);
     }
 }

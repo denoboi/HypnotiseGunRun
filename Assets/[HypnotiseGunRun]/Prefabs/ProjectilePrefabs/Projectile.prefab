@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 5595475113009203410}
   - component: {fileID: 247905821344540558}
   - component: {fileID: 642885631225580830}
+  - component: {fileID: 7008099480274703770}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -185,7 +186,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497c91bdbe6e58042a31c2d034efbfe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 12
+  _speed: 4.56
+--- !u!114 &7008099480274703770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2307822247191261989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ce744ee367d7c4084abc8c8ea099ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  IsFollow: 0
 --- !u!1 &2307822247592823531
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +214,6 @@ GameObject:
   - component: {fileID: 2307822247592823529}
   - component: {fileID: 7529700893966945501}
   - component: {fileID: 3853750788319004381}
-  - component: {fileID: 7910515099026571043}
   m_Layer: 0
   m_Name: MainSphere
   m_TagString: Untagged
@@ -299,15 +313,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 114
   m_CollisionDetection: 0
---- !u!114 &7910515099026571043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2307822247592823531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94ce744ee367d7c4084abc8c8ea099ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

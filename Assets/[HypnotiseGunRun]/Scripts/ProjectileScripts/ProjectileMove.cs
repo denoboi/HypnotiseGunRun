@@ -47,8 +47,9 @@ public class ProjectileMove : MonoBehaviour
     private void MoveProjectile()
     {
         //if (!_canShoot) return;
-        Rigidbody.AddForce((Vector3.up / 2f + Vector3.forward) * _speed, ForceMode.Impulse);
+        Rigidbody.AddForce((new Vector3(0, .5f, 1f)) * _speed, ForceMode.Impulse);
         
+        //transform.DOJump(new Vector3(transform.position.x, transform.position.y, transform.position.z +5) , 2f, 5, 5f).SetLoops(-1);
         //transform.Translate(Projectile.Direction * _speed * Time.deltaTime);
     }
     

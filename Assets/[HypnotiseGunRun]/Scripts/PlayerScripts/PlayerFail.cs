@@ -78,6 +78,7 @@ public class PlayerFail : MonoBehaviour
    
     private void EndPushBack() 
     {
+        
         Rigidbody.isKinematic = true;
         _mainCollider.isTrigger = true;        
     }
