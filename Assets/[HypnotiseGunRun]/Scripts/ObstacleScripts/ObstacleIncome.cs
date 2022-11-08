@@ -22,7 +22,7 @@ public class ObstacleIncome : MonoBehaviour
     private const float SPAWN_OFFSET = 0.5f;
     private const int MONEY_VALUE = 1;
 
-    private void OnEnable()
+    private void OnEnable()                                                 
     {
         ObstacleDestruction.OnObstacleDestroyed.AddListener(SpawnMoney);
         ObstacleDestruction.OnBigObstacleDestroyed.AddListener(SpawnBigMoney);

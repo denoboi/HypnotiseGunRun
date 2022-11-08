@@ -64,13 +64,13 @@ public class ProjectileShoot : MonoBehaviour
 
     private void Start()
     {
-        SpawnProjectile();
+        //SpawnProjectile();
     }
 
 
     private void Update()
     {
-        
+        SpawnProjectile();
         ProjectileSpawnRate();
     }
 
@@ -81,28 +81,28 @@ public class ProjectileShoot : MonoBehaviour
 
     private void SpawnProjectile()
     {
-        // if (!_isGameStarted)
-        //     return;
-        //
-        // if (_isGameEnd)
-        //     return;
-        //
-        // if (Player.Instance.IsWin)
-        //     return;
-        //
-        // _timer += Time.deltaTime;
+        if (!_isGameStarted)
+            return;
+        
+        if (_isGameEnd)
+            return;
+        
+        if (Player.Instance.IsWin)
+            return;
+        
+        _timer += Time.deltaTime;
 
-        // if (_timer >= SpawnRate)
-        // {
-            ProjectileCreator.CreateProjectile();
+        if (_timer >= SpawnRate)
+        {
+        ProjectileCreator.CreateProjectile();
 
             // if (PlayerSpreadShot.IsSpreadShotEnabled)
             // {
             //     PlayerSpreadShot.SpreadShotSpawn();
             // }
 
-        //     HCB.Core.EventManager.OnShoot.Invoke();
-        //     _timer = 0;
-        // }
+            HCB.Core.EventManager.OnShoot.Invoke();
+            _timer = 0;
+        }
     }
 }

@@ -33,25 +33,23 @@ public class ProjectileMove : MonoBehaviour
 
     private Rigidbody _rb;
 
-    public Rigidbody Rigidbody => _rb == null ? _rb = GetComponent<Rigidbody>() : _rb;
+    public Rigidbody Rigidbody => _rb == null ? _rb = GetComponentInChildren<Rigidbody>() : _rb;
 
     private bool _canShoot = true;
     [SerializeField] private float _speed = 20f;
 
     private void Update()
     {
-        //MoveProjectile();
+       // MoveProjectile();
     }
     
     [Button]
     private void MoveProjectile()
     {
         //if (!_canShoot) return;
+        Rigidbody.AddForce((Vector3.up / 2f + Vector3.forward) * _speed, ForceMode.Impulse);
         
-        Rigidbody.AddForce((Vector3.up / 1.3f + Vector3.forward) * _speed, ForceMode.Impulse); 
         //transform.Translate(Projectile.Direction * _speed * Time.deltaTime);
-        
-
     }
     
     

@@ -41,21 +41,21 @@ public class PlayerFail : MonoBehaviour
         if (Player.IsFailed)
             return;
       
-        // ObstacleDestruction breakable = other.GetComponent<ObstacleDestruction>();
-        //
-        // if (breakable != null)
-        // {
-        //     HCB.Core.EventManager.OnPlayerFailed.Invoke();
-        //     Player.IsFailed = true;
-        //     StartPushBack();
-        //  
-        //    
-        //  
-        //     Run.After(1,()=>GameManager.Instance.CompeleteStage(false));
-        //  
-        //     HapticManager.Haptic(HapticTypes.Failure);
-        //     Debug.Log("DIE MOTHERFUCKER DIE");
-        // }
+        ObstacleDestruction breakable = other.GetComponent<ObstacleDestruction>();
+        
+        if (breakable != null)
+        {
+            HCB.Core.EventManager.OnPlayerFailed.Invoke();
+            Player.IsFailed = true;
+            StartPushBack();
+         
+           
+         
+            Run.After(1,()=>GameManager.Instance.CompeleteStage(false));
+         
+            HapticManager.Haptic(HapticTypes.Failure);
+            Debug.Log("DIE MOTHERFUCKER DIE");
+        }
     }
    
    
