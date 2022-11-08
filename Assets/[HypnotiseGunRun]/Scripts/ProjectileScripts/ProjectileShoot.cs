@@ -94,7 +94,7 @@ public class ProjectileShoot : MonoBehaviour
 
         if (_timer >= SpawnRate)
         {
-        ProjectileCreator.CreateProjectile();
+        ProjectileCreator.CreateProjectile(true, 5);
 
             // if (PlayerSpreadShot.IsSpreadShotEnabled)
             // {

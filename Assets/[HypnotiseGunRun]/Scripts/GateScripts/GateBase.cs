@@ -31,9 +31,9 @@ public class GateBase : MonoBehaviour, IInteractable
 
     protected virtual void CreateParticle(Transform parent) 
     {
-        GameObject particleObject = PoolingSystem.Instance.InstantiateAPS(CurrentParticleID, parent.position);
-        particleObject.transform.SetParent(parent);
-        particleObject.GetComponentInChildren<ParticleSystem>().Play();
+        // GameObject particleObject = PoolingSystem.Instance.InstantiateAPS(CurrentParticleID, parent.position);
+        // particleObject.transform.SetParent(parent);
+        // particleObject.GetComponentInChildren<ParticleSystem>().Play();
     }   
 
    

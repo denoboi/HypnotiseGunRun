@@ -1,18 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class ProjectileFollow : MonoBehaviour
 {
-    
-    void Start()
-    {
-        
-    }
+    public Transform Target;
+    public bool IsFollow;
 
-    
-    void Update()
+    private void Update()
     {
-        
+        if (IsFollow && Target != null)
+            transform.DOLocalMove(Target.localPosition, 0.3f);
     }
 }

@@ -18,18 +18,43 @@ public class ProjectileCreator : MonoBehaviour
     [SerializeField] private Transform _projectileSpawnPoint;
     
 
-    public Projectile CreateProjectile()
+    public void CreateProjectile(bool isMultiple, int bulletCount)
     {
+        
         if (Player.IsFailed || Player.IsWin)
-            return null;
+            return;
 
-        Projectile projectile = PoolingSystem.Instance.InstantiateAPS(PROJECTILE_POOL_ID, _projectileSpawnPoint.position)
-            .GetComponentInChildren<Projectile>();
+        if (!isMultiple)
+        {
+            Projectile projectile = PoolingSystem.Instance.InstantiateAPS(PROJECTILE_POOL_ID, _projectileSpawnPoint.position)
+                .GetComponentInChildren<Projectile>();
+            
+            projectile.Initialize(Vector3.forward);
+        
+            
+        }
+
+        else
+        {
+            for (int i = 0; i < bulletCount; i++)
+            {
+                Projectile projectile = PoolingSystem.Instance.InstantiateAPS(PROJECTILE_POOL_ID, _projectileSpawnPoint.position)
+                    .GetComponentInChildren<Projectile>();
+                
+                projectile.Initialize(Vector3.forward);
+                
+                
+            }
+
+            
+        }
+        
+       
+        
+        
         
         //projectile.transform.SetParent(transform);
         
-        projectile.Initialize(Vector3.forward);
-        
-        return projectile;
+       
     }
 }
