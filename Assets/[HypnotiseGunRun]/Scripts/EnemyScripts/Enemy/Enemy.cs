@@ -42,12 +42,8 @@ public class Enemy : MonoBehaviour
 
     private void CheckKill()
     {
-        
-
         if (Health > 0) return;
-
         Kill();
-
     }
 
     private void Kill()

@@ -9,23 +9,53 @@ using UnityEngine;
 public class ProjectileCollision : MonoBehaviour
 {
     private bool _isCollided;
+    private MeshRenderer _renderer;
+    public MeshRenderer Renderer => _renderer == null ? _renderer = GetComponent<MeshRenderer>() : _renderer;
+    
 
-   
-    // private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
+    {
+        ObstacleDestruction breakable = other.GetComponentInParent<ObstacleDestruction>();
+    
+        if (breakable != null && !_isCollided)
+        {
+            _isCollided = true;
+            HapticManager.Haptic(HapticTypes.SoftImpact);
+            
+    
+            breakable.ObstacleLevel--;
+            
+            Renderer.enabled = false;
+            breakable.OnHit.Invoke();
+            
+    
+            Debug.Log("Carptii");
+    
+            if (breakable.ObstacleLevel <= 0)
+            {
+                breakable.ObstacleLevel = 0;
+                breakable.DestructObstacle();
+            }
+        }
+    }
+
+    // private void OnCollisionEnter(Collision collision)
     // {
-    //     ObstacleDestruction breakable = other.GetComponentInParent<ObstacleDestruction>();
+    //     ObstacleDestruction breakable = collision.gameObject.GetComponentInParent<ObstacleDestruction>();
     //
-    //     if (breakable != null && !_isCollided)
+    //     if (breakable != null && !_isCollided && breakable.ObstacleLevel > 0)
     //     {
     //         _isCollided = true;
     //         HapticManager.Haptic(HapticTypes.SoftImpact);
-    //
-    //
+    //         
+    //         Debug.Log("Carptii");
     //         breakable.ObstacleLevel--;
     //         breakable.OnHit.Invoke();
+    //         
+    //        
     //
     //
-    //         Debug.Log("Carptii");
+    //         
     //
     //         if (breakable.ObstacleLevel <= 0)
     //         {
@@ -34,29 +64,5 @@ public class ProjectileCollision : MonoBehaviour
     //         }
     //     }
     // }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        ObstacleDestruction breakable = collision.gameObject.GetComponentInParent<ObstacleDestruction>();
-
-        if (breakable != null && !_isCollided && breakable.ObstacleLevel > 0)
-        {
-            _isCollided = true;
-            HapticManager.Haptic(HapticTypes.SoftImpact);
-
-            Debug.Log("Carptii");
-            breakable.ObstacleLevel--;
-            breakable.OnHit.Invoke();
-
-
-            
-
-            if (breakable.ObstacleLevel <= 0)
-            {
-                breakable.ObstacleLevel = 0;
-                breakable.DestructObstacle();
-            }
-        }
-    }
 
 }

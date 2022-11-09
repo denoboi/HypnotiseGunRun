@@ -79,8 +79,8 @@ MonoBehaviour:
   Projectiles:
   - {fileID: 2307822247592823063}
   Ball: {fileID: 2307822247592823531}
-  BallCount: 5
-  Offset: {x: 0, y: 0, z: -0.01}
+  BallCount: 3
+  Offset: {x: 0, y: 0, z: 0}
   _speed: 7.11
 --- !u!1 &2307822247592823531
 GameObject:
@@ -91,11 +91,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2307822247592823063}
+  - component: {fileID: 2315598384790879042}
   - component: {fileID: 2307822247592823062}
   - component: {fileID: 2307822247592823529}
   - component: {fileID: 7529700893966945501}
   - component: {fileID: 5103990545415056956}
-  - component: {fileID: 2315598384790879042}
   m_Layer: 0
   m_Name: MainSphere
   m_TagString: Untagged
@@ -117,6 +117,18 @@ Transform:
   m_Father: {fileID: 2307822247191261986}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2315598384790879042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2307822247592823531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2837555a80f0d4481f06c1ea936b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &2307822247592823062
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -195,15 +207,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 114
   m_CollisionDetection: 0
---- !u!114 &2315598384790879042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2307822247592823531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b2837555a80f0d4481f06c1ea936b59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

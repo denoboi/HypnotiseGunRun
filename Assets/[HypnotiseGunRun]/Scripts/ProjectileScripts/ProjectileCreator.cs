@@ -28,6 +28,9 @@ public class ProjectileCreator : MonoBehaviour
         {
             Projectile projectile = PoolingSystem.Instance.InstantiateAPS(PROJECTILE_POOL_ID, _projectileSpawnPoint.position)
                 .GetComponentInChildren<Projectile>();
+
+            projectile.GetComponentInChildren<MeshRenderer>().enabled = true;
+            
             
             projectile.Initialize(Vector3.forward);
         
@@ -42,7 +45,8 @@ public class ProjectileCreator : MonoBehaviour
                     .GetComponentInChildren<Projectile>();
                 
                 projectile.Initialize(Vector3.forward);
-                
+                projectile.GetComponentInChildren<MeshRenderer>().enabled = true;
+
                 
             }
 

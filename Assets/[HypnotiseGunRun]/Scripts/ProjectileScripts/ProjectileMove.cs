@@ -17,6 +17,8 @@ public class ProjectileMove : MonoBehaviour
     private Projectile _projectile;
 
     public GameObject Ball;
+    
+    [Range(1, 50)]
     public int BallCount;
 
     public Vector3 Offset;
@@ -24,11 +26,6 @@ public class ProjectileMove : MonoBehaviour
     public Projectile Projectile
     {
         get { return _projectile == null ? _projectile = GetComponentInChildren<Projectile>() : _projectile; }
-    }
-
-    private void Start()
-    {
-        
     }
 
 
@@ -49,17 +46,19 @@ public class ProjectileMove : MonoBehaviour
         for (int i = 0; i < BallCount; i++)
         {
             GameObject ball = Instantiate(Ball, transform);
+
+            ball.GetComponentInChildren<MeshRenderer>().enabled = true;
             
             if (ball.TryGetComponent(out Rigidbody rigidbody))
             {
                 Destroy(rigidbody);
-                
-
             }
             
             ball.transform.localPosition = Vector3.zero;
             
             Projectiles.Add(ball.transform);
+            
+            
         }
     }
 
