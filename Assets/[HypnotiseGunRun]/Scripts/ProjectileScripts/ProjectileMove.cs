@@ -4,24 +4,63 @@ using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using HCB.Core;
+using HCB.PoolingSystem;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
 public class ProjectileMove : MonoBehaviour
 {
+    public List<Transform> Projectiles = new List<Transform>();
+
+    private int _index = 0;
+    
     private Projectile _projectile;
+
+    public GameObject Ball;
+    public int BallCount;
+
+    public Vector3 Offset;
+    
     public Projectile Projectile
     {
         get { return _projectile == null ? _projectile = GetComponentInChildren<Projectile>() : _projectile; }
     }
 
-    
+    private void Start()
+    {
+        
+    }
+
 
     private void OnEnable()
     {
         if (Projectile == null)
             return;
         Projectile.OnInitialized.AddListener(MoveProjectile);
+        
+        if (Ball.TryGetComponent(out Rigidbody rb))
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            
+        }
+        Ball.transform.localPosition = Vector3.zero;
+        
+        for (int i = 0; i < BallCount; i++)
+        {
+            GameObject ball = Instantiate(Ball, transform);
+            
+            if (ball.TryGetComponent(out Rigidbody rigidbody))
+            {
+                Destroy(rigidbody);
+                
+
+            }
+            
+            ball.transform.localPosition = Vector3.zero;
+            
+            Projectiles.Add(ball.transform);
+        }
     }
 
     private void OnDisable()
@@ -29,6 +68,18 @@ public class ProjectileMove : MonoBehaviour
         if (Projectile == null)
             return;
         Projectile.OnInitialized.RemoveListener(MoveProjectile);
+        for (int i = 0; i < Projectiles.Count; i++)
+        {
+            if(i > 0)
+                Destroy(Projectiles[i].gameObject); 
+        }
+        
+        Projectiles.Clear();
+        
+        Projectiles.Add(Ball.transform);
+       
+        _index = 0;
+
     }
 
     private Rigidbody _rb;
@@ -38,9 +89,26 @@ public class ProjectileMove : MonoBehaviour
     private bool _canShoot = true;
     [SerializeField] private float _speed = 20f;
 
-    private void Update()
+    private void FixedUpdate()
     {
-       // MoveProjectile();
+        if (Projectiles.Count <= 0) 
+            return;
+        
+        for (int i = 0; i < Projectiles.Count; i++)
+        {
+            if (i-1 <= 0)
+            {
+                _index = 1;
+            }
+            else
+            {
+                _index = i;
+            }
+            Projectiles[_index].transform.position = new Vector3(Projectiles[_index].transform.position.x,
+                Mathf.Lerp(Projectiles[_index].transform.position.y, Projectiles[_index-1].transform.position.y  + Offset.y, 10 * Time.deltaTime),
+                Mathf.Lerp(Projectiles[_index].transform.position.z, Projectiles[_index-1].transform.position.z + Offset.z, 10 * Time.deltaTime));
+            
+        }
     }
     
     [Button]
