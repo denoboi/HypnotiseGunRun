@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6604436079003972804}
   - component: {fileID: 247905821344540558}
   - component: {fileID: 642885631225580830}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ MonoBehaviour:
   - {fileID: 2307822247592823063}
   Ball: {fileID: 2307822247592823531}
   BallCount: 3
-  Offset: {x: 0, y: 0, z: 0}
+  Offset: {x: 0, y: -0.12, z: 0}
   _speed: 7.11
 --- !u!1 &2307822247592823531
 GameObject:
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2307822247592823529}
   - component: {fileID: 7529700893966945501}
   - component: {fileID: 5103990545415056956}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MainSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -29,8 +29,6 @@ public class ProjectileCollision : MonoBehaviour
             breakable.OnHit.Invoke();
             
     
-            Debug.Log("Carptii");
-    
             if (breakable.ObstacleLevel <= 0)
             {
                 breakable.ObstacleLevel = 0;

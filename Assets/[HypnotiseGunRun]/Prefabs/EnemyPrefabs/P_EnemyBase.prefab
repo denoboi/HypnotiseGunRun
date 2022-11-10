@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8749365343099673739}
   - component: {fileID: 2482091400466805809}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356867757723348335}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2.6788785
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 2148646928888111275}
   - component: {fileID: 3421390242228633266}
   - component: {fileID: 6589311008277894606}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333526681670403388}
   - component: {fileID: 2584345271946141163}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 5711162647427234450}
   - component: {fileID: 3663998428761105934}
   - component: {fileID: 150764304169917286}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: P_EnemyBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visual: {fileID: 8987369234357514795}
-  _deadMaterial: {fileID: 0}
+  _deadMaterial: {fileID: 2100000, guid: ca1442d5b4357e542bb2bf133ded3f0b, type: 2}
 --- !u!114 &5711162647427234450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 7690850032343441933}
   - component: {fileID: 5548913619744651295}
   - component: {fileID: 7954480890898087667}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Health Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8987369234357514795}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

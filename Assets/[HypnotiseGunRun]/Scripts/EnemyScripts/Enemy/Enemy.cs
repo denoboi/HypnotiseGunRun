@@ -20,14 +20,26 @@ public class Enemy : MonoBehaviour
     [HideInInspector] public UnityEvent OnKilled = new UnityEvent();
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Projectile _projectile = collision.gameObject.GetComponentInParent<Projectile>();
+    // private void OnCollisionEnter(Collision collision)
+    // {
+    //     Projectile _projectile = collision.gameObject.GetComponentInParent<Projectile>();
+    //
+    //     if (_projectile != null)
+    //     {
+    //        Hit();
+    //     }
+    // }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        ProjectileCollision _projectile = other.GetComponentInParent<ProjectileCollision>();
+       
         if (_projectile != null)
         {
-           Hit();
+            Hit();
+            _projectile.Renderer.enabled = false;
         }
+        
     }
 
 
@@ -35,6 +47,7 @@ public class Enemy : MonoBehaviour
     {
         OnHit.Invoke();
         Health--;
+       
         Health = Mathf.Max(Health, 0);
         Debug.Log("ENEMYBAM");
         CheckKill();
