@@ -79,7 +79,7 @@ MonoBehaviour:
   Projectiles:
   - {fileID: 2307822247592823063}
   Ball: {fileID: 2307822247592823531}
-  lerpTime: 15.91
+  lerpTime: 12
   Offset: {x: 0, y: 0, z: 0}
   _shootDirection: {x: 0, y: 1.7, z: 7.63}
 --- !u!1 &2307822247592823531

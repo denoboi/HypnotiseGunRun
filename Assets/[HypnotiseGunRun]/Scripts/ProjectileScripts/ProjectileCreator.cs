@@ -10,8 +10,11 @@ public class ProjectileCreator : MonoBehaviour
 {
     private Player _player;
 
+    public GameObject ProjectilePrefab;
+
     public Player Player => _player == null ? _player = GetComponentInParent<Player>() : _player;
     public const string PROJECTILE_POOL_ID = "ProjectileBalls";
+    
     
    
 
@@ -26,8 +29,8 @@ public class ProjectileCreator : MonoBehaviour
 
         if (!isMultiple)
         {
-            Projectile projectile = PoolingSystem.Instance.InstantiateAPS(PROJECTILE_POOL_ID, _projectileSpawnPoint.position)
-                .GetComponentInChildren<Projectile>();
+            Projectile projectile = Instantiate(ProjectilePrefab, _projectileSpawnPoint.position, _projectileSpawnPoint.localRotation).GetComponent<Projectile>();
+               
 
             projectile.GetComponentInChildren<MeshRenderer>().enabled = true;
             
@@ -37,22 +40,22 @@ public class ProjectileCreator : MonoBehaviour
             
         }
 
-        else
-        {
-            for (int i = 0; i < bulletCount; i++)
-            {
-                Projectile projectile = PoolingSystem.Instance.InstantiateAPS(PROJECTILE_POOL_ID, _projectileSpawnPoint.position)
-                    .GetComponentInChildren<Projectile>();
-                
-                projectile.Initialize(Vector3.forward);
-                projectile.GetComponentInChildren<MeshRenderer>().enabled = true;
-
-                
-            }
+        // else
+        // {
+        //     for (int i = 0; i < bulletCount; i++)
+        //     {
+        //         Projectile projectile = PoolingSystem.Instance.InstantiateAPS(PROJECTILE_POOL_ID, _projectileSpawnPoint.position)
+        //             .GetComponent<Projectile>();
+        //         
+        //         projectile.Initialize(Vector3.forward);
+        //         projectile.GetComponentInChildren<MeshRenderer>().enabled = true;
+        //
+        //         
+        //     }
 
             
-        }
-        
+        // }
+        //
        
         
         

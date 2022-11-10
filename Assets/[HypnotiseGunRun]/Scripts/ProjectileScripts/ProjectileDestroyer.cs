@@ -46,8 +46,8 @@ public class ProjectileDestroyer : MonoBehaviour
 
     private void StartDestroy()
     {
-       // Run.After(PlayerFireRange.Instance.DestroyTime, DestroyProjectile); //update yerine boyle yap
-      // Run.After(DestroyTime, ()=> PoolingSystem.Instance.DestroyAPS(gameObject));
+       Run.After(PlayerFireRange.Instance.DestroyTime, DestroyProjectile); //update yerine boyle yap
+      //Run.After(DestroyTime, ()=> PoolingSystem.Instance.DestroyAPS(gameObject));
     }
 
    
@@ -55,10 +55,8 @@ public class ProjectileDestroyer : MonoBehaviour
 
     private void DestroyProjectile()
     {
-        // foreach (var rb in Rigidbodies)
-        // {
-        //     rb.constraints = RigidbodyConstraints.None;
-        // }
+        
+        
         Projectile.OnKilled.Invoke(); //yoksa bug oldu.
         
     }

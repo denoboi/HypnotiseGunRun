@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
         {
             Hit();
             _projectile.Renderer.enabled = false;
+            _projectile.GetComponentInChildren<Collider>().enabled = false;
         }
         
     }

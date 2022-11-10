@@ -26,6 +26,7 @@ public class FinishLine : MonoBehaviour
             GameManager.Instance.CompeleteStage(true);
             // HCB.Core.EventManager.OnEnteredEndGame.Invoke();
             IsEndGame = true;
+            Player.Instance.IsWin = true;
 
         }
     }
