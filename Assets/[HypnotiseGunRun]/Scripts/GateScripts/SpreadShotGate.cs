@@ -27,7 +27,7 @@ public class SpreadShotGate : GateBase
 
         if (interactor != null)
         {
-            CreateParticle(interactor.transform);
+           //CreateParticle(interactor.transform);
            
             HapticManager.Haptic(HapticTypes.RigidImpact);
             

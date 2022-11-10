@@ -12,29 +12,41 @@ public class ProjectileMove : MonoBehaviour
 {
     public List<Transform> Projectiles = new List<Transform>();
 
-    private int _index = 0;
+   
     
     private Projectile _projectile;
-
-    public GameObject Ball;
-    
-    [Range(1, 50)]
-    public int BallCount;
-
-    public Vector3 Offset;
     
     public Projectile Projectile
     {
         get { return _projectile == null ? _projectile = GetComponentInChildren<Projectile>() : _projectile; }
     }
+    private Rigidbody _rb;
 
+    public Rigidbody Rigidbody => _rb == null ? _rb = GetComponentInChildren<Rigidbody>() : _rb;
+
+    private int _index = 0;
+    public GameObject Ball;
+    
+    [SerializeField] float lerpTime;
+    
+    
+    private int _ballCount;
+
+    public Vector3 Offset;
+    
+  
+    private bool _canShoot = true;
+    //[SerializeField] private float _speed = 20f;
+    [SerializeField] private Vector3 _shootDirection = new Vector3(0, .5f, 1f);
 
     private void OnEnable()
     {
-        if (Projectile == null)
+        if (Projectile == null || PlayerFireRate.Instance == null)
             return;
         Projectile.OnInitialized.AddListener(MoveProjectile);
         
+        
+        _ballCount = PlayerFireRate.Instance.FireRate;
         if (Ball.TryGetComponent(out Rigidbody rb))
         {
             rb.velocity = Vector3.zero;
@@ -43,10 +55,13 @@ public class ProjectileMove : MonoBehaviour
         }
         Ball.transform.localPosition = Vector3.zero;
         
-        for (int i = 0; i < BallCount; i++)
+        for (int i = 0; i < _ballCount; i++)
         {
             GameObject ball = Instantiate(Ball, transform);
-
+            
+            ball.transform.localScale = Vector3.zero;
+            ball.transform.DOScale(Vector3.one * .3f, .5f).SetDelay(i * 0.05f).SetEase(Ease.Linear);
+            
             ball.GetComponentInChildren<MeshRenderer>().enabled = true;
             
             if (ball.TryGetComponent(out Rigidbody rigidbody))
@@ -81,12 +96,7 @@ public class ProjectileMove : MonoBehaviour
 
     }
 
-    private Rigidbody _rb;
-
-    public Rigidbody Rigidbody => _rb == null ? _rb = GetComponentInChildren<Rigidbody>() : _rb;
-
-    private bool _canShoot = true;
-    [SerializeField] private float _speed = 20f;
+  
 
     private void FixedUpdate()
     {
@@ -103,9 +113,11 @@ public class ProjectileMove : MonoBehaviour
             {
                 _index = i;
             }
+
+            
             Projectiles[_index].transform.position = new Vector3(Projectiles[_index].transform.position.x,
-                Mathf.Lerp(Projectiles[_index].transform.position.y, Projectiles[_index-1].transform.position.y  + Offset.y, 10 * Time.deltaTime),
-                Mathf.Lerp(Projectiles[_index].transform.position.z, Projectiles[_index-1].transform.position.z + Offset.z, 10 * Time.deltaTime));
+                Mathf.Lerp(Projectiles[_index].transform.position.y, Projectiles[_index-1].transform.position.y  + Offset.y, lerpTime * Time.deltaTime),
+                Mathf.Lerp(Projectiles[_index].transform.position.z, Projectiles[_index-1].transform.position.z + Offset.z,  lerpTime* Time.deltaTime));
             
         }
     }
@@ -114,7 +126,7 @@ public class ProjectileMove : MonoBehaviour
     private void MoveProjectile()
     {
         //if (!_canShoot) return;
-        Rigidbody.AddForce((new Vector3(0, .5f, 1f)) * _speed, ForceMode.Impulse);
+        Rigidbody.AddForce(_shootDirection, ForceMode.Impulse);
         
         //transform.DOJump(new Vector3(transform.position.x, transform.position.y, transform.position.z +5) , 2f, 5, 5f).SetLoops(-1);
         //transform.Translate(Projectile.Direction * _speed * Time.deltaTime);

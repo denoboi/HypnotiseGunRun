@@ -79,9 +79,9 @@ MonoBehaviour:
   Projectiles:
   - {fileID: 2307822247592823063}
   Ball: {fileID: 2307822247592823531}
-  BallCount: 3
-  Offset: {x: 0, y: -0.12, z: 0}
-  _speed: 7.11
+  lerpTime: 15.91
+  Offset: {x: 0, y: 0, z: 0}
+  _shootDirection: {x: 0, y: 1.7, z: 7.63}
 --- !u!1 &2307822247592823531
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 2307822247592823531}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 2307822247191261986}
   m_RootOrder: 0

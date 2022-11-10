@@ -27,8 +27,10 @@ public class Projectile : MonoBehaviour
     public void Initialize(Vector3 direction)
     {
         Direction = direction;
-
+            
         OnInitialized.Invoke();
+        
+        
         
     }
 

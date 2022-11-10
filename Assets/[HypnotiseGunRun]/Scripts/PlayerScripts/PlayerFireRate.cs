@@ -7,41 +7,53 @@ using UnityEngine;
 
 public class PlayerFireRate : MonoBehaviour
 {
-    // private Player _player;
-    // private Player Player => _player == null ? _player = GetComponentInParent<Player>() : _player;   
-    // public float FireRate { get; set; }
-    // public IdleStat FireRateIdleStat => UpgradeManager.Instance.FireRate;
-    //
-    // //private float InitialFireRate => (float)GameManager.Instance.UpgradeData.FireRateStat.CurrentValue;
-    //
-    // private const float MAX_FIRE_RATE = 100f;
-    // private const float INCREASE_AMOUNT = 1f;
-    //
-    //
-    // private void OnEnable()
-    // {
-    //     HCB.Core.EventManager.OnFireRateGateInteracted.AddListener(IncreaseFireRate);
-    //     LevelManager.Instance.OnLevelStart.AddListener(SetInitialFireRate);
-    //     
-    // }
-    //
-    // private void OnDisable()
-    // {
-    //     if (Managers.Instance == null)
-    //         return;
-    //     HCB.Core.EventManager.OnFireRateGateInteracted.RemoveListener(IncreaseFireRate);
-    //     LevelManager.Instance.OnLevelStart.RemoveListener(SetInitialFireRate);
-    //
-    // }
-    //
-    //
-    //
-    // private void IncreaseFireRate()
-    // {
-    //     FireRate += INCREASE_AMOUNT;
-    //     FireRate = Mathf.Min(FireRate, MAX_FIRE_RATE);
-    // }
-    //
+    public static PlayerFireRate Instance;
+    private Player _player;
+    private Player Player => _player == null ? _player = GetComponentInParent<Player>() : _player;
+    
+    [Range(0,100)]
+    [SerializeField] private int _fireRate;
+    public int FireRate
+    {
+        get => _fireRate;
+        set => _fireRate = value;
+    }
+    //public IdleStat FireRateIdleStat => UpgradeManager.Instance.FireRate;
+    
+    //private float InitialFireRate => (float)GameManager.Instance.UpgradeData.FireRateStat.CurrentValue;
+    
+    private const int MAX_FIRE_RATE = 100;
+    private const int INCREASE_AMOUNT = 3;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void OnEnable()
+    {
+        HCB.Core.EventManager.OnFireRateGateInteracted.AddListener(IncreaseFireRate);
+        //LevelManager.Instance.OnLevelStart.AddListener(SetInitialFireRate);
+        
+    }
+    
+    private void OnDisable()
+    {
+        if (Managers.Instance == null)
+            return;
+        HCB.Core.EventManager.OnFireRateGateInteracted.RemoveListener(IncreaseFireRate);
+        //LevelManager.Instance.OnLevelStart.RemoveListener(SetInitialFireRate);
+    
+    }
+    
+    
+    
+    private void IncreaseFireRate()
+    {
+        FireRate += INCREASE_AMOUNT;
+        FireRate = Mathf.Min(FireRate, MAX_FIRE_RATE);
+    }
+    
     // private void SetInitialFireRate()
     // {
     //     FireRate = (float)FireRateIdleStat.CurrentValue;
