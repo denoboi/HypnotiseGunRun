@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8749365343099673739}
   - component: {fileID: 2482091400466805809}
-  m_Layer: 0
+  - component: {fileID: 376983532331973024}
+  m_Layer: 16
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +47,19 @@ CapsuleCollider:
   m_Height: 2.6788785
   m_Direction: 1
   m_Center: {x: 0, y: 1.3394393, z: 0}
+--- !u!114 &376983532331973024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356867757723348335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f446e8c5dfc704f8194e69943a75e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsDead: 0
 --- !u!1 &597569497939188698
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +71,7 @@ GameObject:
   - component: {fileID: 2148646928888111275}
   - component: {fileID: 3421390242228633266}
   - component: {fileID: 6589311008277894606}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1333526681670403388}
   - component: {fileID: 2584345271946141163}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,8 +328,10 @@ GameObject:
   - component: {fileID: 6017233926293775916}
   - component: {fileID: 5711162647427234450}
   - component: {fileID: 3663998428761105934}
+  - component: {fileID: 7163178249131649089}
   - component: {fileID: 150764304169917286}
-  m_Layer: 0
+  - component: {fileID: 999743774079916599}
+  m_Layer: 16
   m_Name: P_EnemyBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,6 +464,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183368bbaec42234288b587bfa53792e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7163178249131649089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8011451132787478738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c6d63b8b0148d4ea34e5a705872c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &150764304169917286
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -460,10 +488,25 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &999743774079916599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8011451132787478738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89fae789d0b2f514dad584acfc73a00a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterLayerIndex: 15
+  RagdollLayerIndex: 16
+  Ragdolls: []
 --- !u!1 &8988871093214748838
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +518,7 @@ GameObject:
   - component: {fileID: 7690850032343441933}
   - component: {fileID: 5548913619744651295}
   - component: {fileID: 7954480890898087667}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Health Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8987369234357514795}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

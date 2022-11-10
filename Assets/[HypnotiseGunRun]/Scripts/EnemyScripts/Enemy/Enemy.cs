@@ -8,6 +8,12 @@ public class Enemy : MonoBehaviour
 {
     [Range(1, 50)] [SerializeField] private int _health;
 
+    private EnemyInteractor _enemyInteractor;
+
+    public EnemyInteractor EnemyInteractor => _enemyInteractor == null
+        ? _enemyInteractor = GetComponentInChildren<EnemyInteractor>()
+        : _enemyInteractor;
+
     public int Health
     {
         get => _health;
@@ -45,6 +51,7 @@ public class Enemy : MonoBehaviour
 
     private void Hit()
     {
+        if (Health < 0) return;
         OnHit.Invoke();
         Health--;
        
@@ -62,7 +69,9 @@ public class Enemy : MonoBehaviour
     private void Kill()
     {
         if (IsKilled) return;
-        
+
+        EnemyInteractor.IsDead = true;
+        GetComponentInChildren<Collider>().enabled= false;
         IsKilled = true;
         OnKilled.Invoke();
     }

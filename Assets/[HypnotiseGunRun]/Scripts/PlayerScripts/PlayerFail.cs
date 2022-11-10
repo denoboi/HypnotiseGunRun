@@ -42,9 +42,9 @@ public class PlayerFail : MonoBehaviour
             return;
       
         ObstacleDestruction breakable = other.GetComponent<ObstacleDestruction>();
-        Enemy enemy = other.GetComponentInParent<Enemy>();
+        EnemyInteractor enemy = other.GetComponentInParent<EnemyInteractor>();
         
-        if (breakable != null || enemy != null)
+        if (breakable != null || (enemy != null && !enemy.IsDead))
         {
             HCB.Core.EventManager.OnPlayerFailed.Invoke();
             Player.IsFailed = true;
