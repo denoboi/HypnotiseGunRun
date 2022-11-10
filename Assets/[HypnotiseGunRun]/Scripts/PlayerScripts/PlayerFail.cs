@@ -42,8 +42,9 @@ public class PlayerFail : MonoBehaviour
             return;
       
         ObstacleDestruction breakable = other.GetComponent<ObstacleDestruction>();
+        EnemyInteractor enemy = other.GetComponentInParent<EnemyInteractor>();
         
-        if (breakable != null)
+        if (breakable != null || (enemy != null && !enemy.IsDead))
         {
             HCB.Core.EventManager.OnPlayerFailed.Invoke();
             Player.IsFailed = true;
@@ -78,6 +79,7 @@ public class PlayerFail : MonoBehaviour
    
     private void EndPushBack() 
     {
+        
         Rigidbody.isKinematic = true;
         _mainCollider.isTrigger = true;        
     }

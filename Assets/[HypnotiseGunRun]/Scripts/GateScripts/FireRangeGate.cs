@@ -16,7 +16,7 @@ public class FireRangeGate : GateBase
         {
             HapticManager.Haptic(HapticTypes.RigidImpact);
             HCB.Core.EventManager.OnFireRangeGateInteracted.Invoke();
-            CreateParticle(interactor.transform);
+            //CreateParticle(interactor.transform);
             Debug.Log("FireRange"); 
             
             OnInteracted.Invoke();

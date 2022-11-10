@@ -15,38 +15,42 @@ public class BulletMultipleSpawner : MonoBehaviour
 
    private void Start()
    {
-      SpawnBullet();
+      Spawn();
    }
 
-   public void SpawnBullet()
-   {
-      
-         StartCoroutine(BulletSpawnCo());
-    
-   }
-
+  
    private void Spawn()
    {
-      GameObject bullet = Instantiate(BulletPrefab, SpawnPoint.position, Quaternion.identity);
-      bullet.GetComponentInChildren<Projectile>().Initialize(Vector3.forward);
-
-      BulletList.Add(bullet);
       
-
-   }
-
-   IEnumerator BulletSpawnCo()
-   {
       for (int i = 0; i < _bulletCount; i++)
       {
-         Spawn();
-         yield return new WaitForSeconds(.1f);
-      }
+         GameObject newBullet= Instantiate(BulletPrefab, SpawnPoint.position, Quaternion.identity);
+         newBullet.GetComponent<Projectile>().Initialize(Vector3.forward);
+         
+         
+         if(BulletList.Count>=1)
+         {
+            newBullet.transform.position = new Vector3(transform.position.x, transform.position.y,
+               BulletList[BulletList.Count - 1].transform.position.z - .5f);
+            
+            newBullet.GetComponentInChildren<ProjectileFollow>().Target = BulletList[BulletList.Count - 1].transform;
+            newBullet.GetComponentInChildren<ProjectileFollow>().IsFollow = true;
+            //newBullet.GetComponentInChildren<Rigidbody>().isKinematic = true;
+            //newBullet.GetComponentInChildren<Collider>().isTrigger = true;
+
+         }
+         
+         BulletList.Add(newBullet);
+
+      } 
+      
+      
      
-     
+
    }
 
    
-
-
+     
+     
 }
+

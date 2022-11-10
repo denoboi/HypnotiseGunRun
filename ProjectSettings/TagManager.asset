@@ -17,11 +17,11 @@ TagManager:
   - Tile
   - 
   - MovingPlatform
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Projectile
+  - Player
+  - ObstaclePieces
+  - Character
+  - Ragdoll
   - 
   - 
   - 

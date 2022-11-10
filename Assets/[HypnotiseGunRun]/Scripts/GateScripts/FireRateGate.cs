@@ -10,16 +10,18 @@ public class FireRateGate : GateBase
    private void OnTriggerEnter(Collider other)
    {
       Interactor interactor = other.GetComponentInChildren<Interactor>();
-
+   
       if (interactor != null)
       {
-         HapticManager.Haptic(HapticTypes.Selection);
-         CreateParticle(interactor.transform);
+         
+         // CreateParticle(interactor.transform);
          HCB.Core.EventManager.OnFireRateGateInteracted.Invoke();
          Debug.Log("FireRate");
-         
+       
          OnInteracted.Invoke();
-        
+         GateInteract(interactor.transform);
       }
    }
+
+   
 }

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6259dad7554dbe4b89c1e2513c9a49f, type: 3}
   m_Name: MovementData
   m_EditorClassIdentifier: 
-  DefaultSpeed: 3.5
+  DefaultSpeed: 3
   SlideSpeed: 8
   SpeedBlendDuration: 1
