@@ -38,7 +38,7 @@ public class ProjectileMove : MonoBehaviour
     private bool _canShoot = true;
 
     //[SerializeField] private float _speed = 20f;
-    [SerializeField] private Vector3 _shootDirection = new Vector3(0, .5f, 1f);
+    
 
     private void OnEnable()
     {
@@ -71,7 +71,8 @@ public class ProjectileMove : MonoBehaviour
                 Destroy(rigidbody);
             }
 
-            ball.transform.localPosition = Vector3.zero;
+            ball.transform.position = new Vector3(Player.Instance.transform.GetChild(0).position.x, transform.position.y,transform.position.z);
+            Debug.LogError(Player.Instance.transform.GetChild(0).position.x);
 
             Projectiles.Add(ball.transform);
         }
@@ -118,7 +119,8 @@ public class ProjectileMove : MonoBehaviour
             }
 
 
-            Projectiles[_index].transform.position = new Vector3(Projectiles[_index].transform.position.x,
+            Projectiles[_index].transform.position = new Vector3(Mathf.Lerp(Projectiles[_index].transform.position.x,
+                Projectiles[_index - 1].transform.position.x + Offset.x, lerpTime * Time.deltaTime),
                 Mathf.Lerp(Projectiles[_index].transform.position.y,
                     Projectiles[_index - 1].transform.position.y + Offset.y, lerpTime * Time.deltaTime),
                 Mathf.Lerp(Projectiles[_index].transform.position.z,
@@ -130,7 +132,8 @@ public class ProjectileMove : MonoBehaviour
     private void MoveProjectile()
     {
         //if (!_canShoot) return;
-        Rigidbody.AddForce(_shootDirection, ForceMode.Impulse);
+        Rigidbody.AddForce(Projectile.Direction, ForceMode.Impulse);
+        
 
         //transform.DOJump(new Vector3(transform.position.x, transform.position.y, transform.position.z +5) , 2f, 5, 5f).SetLoops(-1);
         //transform.Translate(Projectile.Direction * _speed * Time.deltaTime);

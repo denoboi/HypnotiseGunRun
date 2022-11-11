@@ -17,7 +17,7 @@ public class PlayerProjectileCreator : MonoBehaviour
 
 
     [SerializeField] private Transform _projectileSpawnPoint;
-
+    public Vector3 ShootDirection = new Vector3(0, .5f, 1f);
 
     public Projectile CreateProjectile()
     {
@@ -33,7 +33,7 @@ public class PlayerProjectileCreator : MonoBehaviour
         projectile.GetComponentInChildren<MeshRenderer>().enabled = true;
 
 
-        projectile.Initialize(Vector3.forward);
+        projectile.Initialize(ShootDirection); 
 
         return projectile;
         //projectile.transform.SetParent(transform);

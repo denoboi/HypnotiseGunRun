@@ -6196,6 +6196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plane
       objectReference: {fileID: 0}
+    - target: {fileID: 3391204145064778238, guid: 3cf309227def135458dcc5d2c8ce38e1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cf309227def135458dcc5d2c8ce38e1, type: 3}
 --- !u!1 &2041870562 stripped
@@ -6261,15 +6265,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 512782627998093432, guid: 39d049f0fd29fe442aa32f98953ecb6f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.33568516
+      value: 0.33568513
       objectReference: {fileID: 0}
     - target: {fileID: 512782627998093432, guid: 39d049f0fd29fe442aa32f98953ecb6f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000012445908
+      value: -0.000000018262309
       objectReference: {fileID: 0}
     - target: {fileID: 512782627998093432, guid: 39d049f0fd29fe442aa32f98953ecb6f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000004435266
+      value: 0.000000006508018
       objectReference: {fileID: 0}
     - target: {fileID: 512782627998093432, guid: 39d049f0fd29fe442aa32f98953ecb6f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6866,6 +6870,10 @@ PrefabInstance:
       propertyPath: ProjectilePrefab
       value: 
       objectReference: {fileID: 2307822247191261989, guid: d114923648197d548af7a01bb04f0e6b, type: 3}
+    - target: {fileID: 2138002692975935665, guid: 2849863a383bb854bbe037e93b29f21e, type: 3}
+      propertyPath: ShootDirection.z
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2138002693996840096, guid: 2849863a383bb854bbe037e93b29f21e, type: 3}
       propertyPath: RotateBody
       value: 
@@ -6907,6 +6915,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destroyTime: 0.7
+--- !u!114 &2138002692975935666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138002692975935664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c122af93693616479f7a27732bfbb21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rightBallOffset: {x: 3, y: 0, z: 0}
+  _leftBallOffset: {x: -3, y: 0, z: 0}
 --- !u!1001 &3684763557285668211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6940,15 +6962,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3684763558039203546, guid: 1a240188eade84e43b0cf9a3f56f2bb7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.33568516
+      value: 0.33568513
       objectReference: {fileID: 0}
     - target: {fileID: 3684763558039203546, guid: 1a240188eade84e43b0cf9a3f56f2bb7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000012445908
+      value: -0.000000018262309
       objectReference: {fileID: 0}
     - target: {fileID: 3684763558039203546, guid: 1a240188eade84e43b0cf9a3f56f2bb7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000004435266
+      value: 0.000000006508018
       objectReference: {fileID: 0}
     - target: {fileID: 3684763558039203546, guid: 1a240188eade84e43b0cf9a3f56f2bb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

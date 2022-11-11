@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using HCB.Core;
 using UnityEngine;
 
-public class ProjectileShoot : MonoBehaviour
+public class PlayerProjectileShoot : MonoBehaviour
 {
     private PlayerProjectileCreator _playerProjectileCreator;
 
@@ -96,11 +96,11 @@ public class ProjectileShoot : MonoBehaviour
         if (_timer >= SpawnRate)
         {
              PlayerProjectileCreator.CreateProjectile();
-            //
-            // if (PlayerSpreadShot.IsSpreadShotEnabled)
-            // {
-            //     PlayerSpreadShot.SpreadShotSpawn();
-            // }
+            
+            if (PlayerSpreadShot.IsSpreadShotEnabled)
+            {
+                PlayerSpreadShot.SpreadShotSpawn();
+            }
 
             HCB.Core.EventManager.OnShoot.Invoke();
             _timer = 0;

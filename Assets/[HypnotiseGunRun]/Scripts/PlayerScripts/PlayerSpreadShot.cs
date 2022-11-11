@@ -17,8 +17,8 @@ public class PlayerSpreadShot : MonoBehaviour
         }
     }
     
-    private const float SPREAD_SHOT_OFFSET_X = .1f;
-    
+    [SerializeField] private Vector3 _rightBallOffset = new Vector3(55, 0, 0);
+    [SerializeField] private Vector3 _leftBallOffset = new Vector3(0, 0, 0);
     
     
     public bool IsSpreadShotEnabled { get; private set; }
@@ -37,18 +37,14 @@ public class PlayerSpreadShot : MonoBehaviour
     {
         if (Player.Instance.IsFailed)
             return;
-        
-        Vector3 right = new Vector3(SPREAD_SHOT_OFFSET_X, 0, 0);
-        
+     
         Projectile rightBall = PlayerProjectileCreator.CreateProjectile();
-        rightBall.Initialize(right);
+        rightBall.Initialize(_rightBallOffset);
         
-        
-        
-        Vector3 left = new Vector3(-SPREAD_SHOT_OFFSET_X,0,0);
+  
         Projectile leftBall = PlayerProjectileCreator.CreateProjectile();
         
-        leftBall.Initialize(left);
+        leftBall.Initialize(_leftBallOffset);
     }
     
     private void EnableSpreadShot()
