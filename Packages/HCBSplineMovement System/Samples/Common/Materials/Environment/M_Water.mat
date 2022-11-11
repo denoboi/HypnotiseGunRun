@@ -92,7 +92,7 @@ Material:
     - _Cutoff: 0.5
     - _Depth: 46.5
     - _DepthAlpha: 0.07
-    - _DepthDistance: 0.05
+    - _DepthDistance: 0.21
     - _DepthMinAlpha: 0.256
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -104,10 +104,10 @@ Material:
     - _EnableDepthTexture: 1
     - _FoamOpacity: 0.1
     - _FoamSize: 0
-    - _FoamSmooth: 0.182
+    - _FoamSmooth: 0.283
     - _FoamSpeed: 0.1
-    - _FoamSpread: 0.48
-    - _FoamStrength: 0.673
+    - _FoamSpread: 0.87
+    - _FoamStrength: 0.73
     - _FoamTiling: 0.15
     - _GlossMapScale: 1
     - _Glossiness: 0.144
@@ -157,13 +157,13 @@ Material:
     - __dummy__: 0
     m_Colors:
     - _BumpSpeed: {r: 5, g: 5, b: 5, a: 5}
-    - _Color: {r: 0.0038714937, g: 0.5318569, b: 0.8207547, a: 0.59607846}
+    - _Color: {r: 0.28586686, g: 0.4490602, b: 0.8301887, a: 0.59607846}
     - _DepthColor: {r: 0.3820755, g: 0.6915154, b: 1, a: 1}
     - _EmissionColor: {r: 0.23251157, g: 0.5188679, b: 0.50799036, a: 1}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _FoamSpeed: {r: 0, g: 1, b: 0, a: 2}
     - _HColor: {r: 0.13318796, g: 0.2866713, b: 0.38679248, a: 1}
-    - _MaskedColor: {r: 1, g: 0, b: 0, a: 1}
+    - _MaskedColor: {r: 0.33397114, g: 0.8962264, b: 0.8029799, a: 1}
     - _RimColor: {r: 0, g: 0.7329843, b: 1, a: 0.7529412}
     - _SColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
