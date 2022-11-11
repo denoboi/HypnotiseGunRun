@@ -72,7 +72,7 @@ public class ProjectileMove : MonoBehaviour
             }
 
             ball.transform.position = new Vector3(Player.Instance.transform.GetChild(0).position.x, transform.position.y,transform.position.z);
-            Debug.LogError(Player.Instance.transform.GetChild(0).position.x);
+           
 
             Projectiles.Add(ball.transform);
         }

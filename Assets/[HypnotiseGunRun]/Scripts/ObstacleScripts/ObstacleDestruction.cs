@@ -84,7 +84,7 @@ public class ObstacleDestruction : MonoBehaviour, IBreakable
 
             obstacle.GetComponent<MeshCollider>().isTrigger = false;
             _shrinkedVector = new Vector3(0.001f, 0.0001f, 0.0001f);
-            obstacle.transform.DOScale(_shrinkedVector, 1).SetDelay(.8f).OnComplete(() => {obstacle.gameObject.SetActive(false);});
+            obstacle.transform.DOScale(_shrinkedVector, 1).SetDelay(.6f).OnComplete(() => {obstacle.gameObject.SetActive(false);});
             
         }
 
