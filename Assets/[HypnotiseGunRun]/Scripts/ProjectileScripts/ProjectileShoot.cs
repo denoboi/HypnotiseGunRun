@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class ProjectileShoot : MonoBehaviour
 {
-    private ProjectileCreator _projectileCreator;
+    private PlayerProjectileCreator _playerProjectileCreator;
 
-    public ProjectileCreator ProjectileCreator
+    public PlayerProjectileCreator PlayerProjectileCreator
     {
         get
         {
-            return _projectileCreator == null
-                ? _projectileCreator = GetComponentInChildren<ProjectileCreator>()
-                : _projectileCreator;
+            return _playerProjectileCreator == null
+                ? _playerProjectileCreator = GetComponentInChildren<PlayerProjectileCreator>()
+                : _playerProjectileCreator;
         }
     }
 
@@ -39,6 +39,7 @@ public class ProjectileShoot : MonoBehaviour
     
     private bool _isGameStarted;
     private bool _isGameEnd;
+    [Range(0.1f, 10f)]
     public float SpawnRate;
     private float _timer = Mathf.Infinity;
 
@@ -94,8 +95,8 @@ public class ProjectileShoot : MonoBehaviour
 
         if (_timer >= SpawnRate)
         {
-            ProjectileCreator.CreateProjectile(false, 1);
-
+             PlayerProjectileCreator.CreateProjectile();
+            //
             // if (PlayerSpreadShot.IsSpreadShotEnabled)
             // {
             //     PlayerSpreadShot.SpreadShotSpawn();

@@ -33,6 +33,58 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 2.3
       objectReference: {fileID: 0}
+    - target: {fileID: 927727293840138233, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 927727293840138233, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 927727293840138233, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 927727293840138233, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.716
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221641767778127306, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_Size.x
+      value: 3.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221641767778127306, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_Size.y
+      value: 2.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221641767778127306, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 02bac05783c4eed4b838fd5db227b613, type: 3}
+    - target: {fileID: 3221641767778127306, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221641767778127306, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610637749570246697, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610637749570246697, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610637749570246697, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610637749570246697, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.609
+      objectReference: {fileID: 0}
     - target: {fileID: 6293681208564319213, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
       propertyPath: m_Name
       value: MultiShot Gate
@@ -80,6 +132,22 @@ PrefabInstance:
     - target: {fileID: 6293681208564319218, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593913210503354404, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_Size.x
+      value: 4.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593913210503354404, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_Size.y
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593913210503354404, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c62c7ca88342c842bb0deb5d50ae6fa, type: 3}
+    - target: {fileID: 7593913210503354404, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c8fa5046668e214fadf83837e1c4fca, type: 3}
