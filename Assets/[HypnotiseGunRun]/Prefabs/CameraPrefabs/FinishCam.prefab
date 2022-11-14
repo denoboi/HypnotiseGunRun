@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2966907513776895509}
   - component: {fileID: 2966907513776895508}
-  - component: {fileID: 1194883279777270349}
+  - component: {fileID: 906533027}
   m_Layer: 0
   m_Name: FinishCam
   m_TagString: Untagged
@@ -68,7 +68,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 2966907514192168059}
---- !u!114 &1194883279777270349
+--- !u!114 &906533027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2966907513776895511}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 767af83dc7ece7f4eb8dbc256090224d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fbdf549615017844b9591e88f988e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2966907514192168058

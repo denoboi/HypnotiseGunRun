@@ -28,6 +28,6 @@ public class ObstacleParticle : MonoBehaviour
 
     private void PlayParticle()
     {
-        PoolingSystem.Instance.InstantiateAPS(PARTICLE_ID, transform.position + Vector3.back);
+        PoolingSystem.Instance.InstantiateAPS(PARTICLE_ID, transform.position + Vector3.back / 2);
     }
 }
