@@ -23,10 +23,10 @@ public class FinishLine : MonoBehaviour
         if (player != null)
         {
            
-            GameManager.Instance.CompeleteStage(true);
-            // HCB.Core.EventManager.OnEnteredEndGame.Invoke();
+            //GameManager.Instance.CompeleteStage(true);
+            HCB.Core.EventManager.OnEnteredEndGame.Invoke();
             IsEndGame = true;
-            Player.Instance.IsWin = true;
+            //Player.Instance.IsWin = true;
 
         }
     }

@@ -57,6 +57,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.hyperboxgames.hcbendgamesystem": {
+      "version": "file:HCBEndGameSystem",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.hyperboxgames.hcbfloatingcollectablesystem": {
       "version": "file:HCB Floating Collectable System",
       "depth": 0,
