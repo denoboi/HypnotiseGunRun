@@ -10,9 +10,11 @@ namespace HCB.CollectableSystem
         private void OnTriggerEnter(Collider other)
         {
             ICollectable collectable = other.GetComponentInChildren<ICollectable>();
+            
             if (collectable != null)
             {
                 collectable.Collect(this);
+                
             }
 
         }

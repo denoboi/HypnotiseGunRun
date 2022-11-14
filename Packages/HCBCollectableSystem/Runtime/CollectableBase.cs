@@ -8,6 +8,7 @@ namespace HCB.CollectableSystem
     public abstract class CollectableBase : MonoBehaviour, ICollectable
     {
         public GameObject CollectEffectPrefab;
+        public virtual bool CanCollect { get; protected set; } = true;
 
         public virtual void Collect(Collector collector)
         {

@@ -1,16 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using HCB.Core;
 using HCB.PoolingSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
+
 
 public class ObstacleIncome : MonoBehaviour
 {
     private ObstacleDestruction _obstacleDestruction;
+    [SerializeField] private List<Money> _moneys = new List<Money>();
 
     public ObstacleDestruction ObstacleDestruction => _obstacleDestruction == null
         ? _obstacleDestruction = GetComponent<ObstacleDestruction>()
@@ -21,25 +25,60 @@ public class ObstacleIncome : MonoBehaviour
     private const string MONEY_POOL_ID = "Money";
     private const float SPAWN_OFFSET = 0.5f;
     private const int MONEY_VALUE = 1;
+    private string _movementTweenID;
+
+    private void Awake()
+    {
+        _movementTweenID = GetInstanceID() + "MovementTweenID";
+    }
 
     private void OnEnable()                                                 
     {
-        ObstacleDestruction.OnObstacleDestroyed.AddListener(SpawnMoney);
+        ObstacleDestruction.OnObstacleDestroyed.AddListener(MoveMoney);
         ObstacleDestruction.OnBigObstacleDestroyed.AddListener(SpawnBigMoney);
     }
 
     private void OnDisable()
     {
-        ObstacleDestruction.OnObstacleDestroyed.RemoveListener(SpawnMoney);
+        ObstacleDestruction.OnObstacleDestroyed.RemoveListener(MoveMoney);
         ObstacleDestruction.OnBigObstacleDestroyed.RemoveListener(SpawnBigMoney);
     }
 
-    private void SpawnMoney() 
+
+    private void MoveMoney()
     {
-        // Vector3 spawnPoint = transform.position + Vector3.up * SPAWN_OFFSET;
-        // Money money = PoolingSystem.Instance.InstantiateAPS(MONEY_POOL_ID, spawnPoint).GetComponentInChildren<Money>();
-        // money.Initialize(MONEY_VALUE);
+        DOTween.Kill(_movementTweenID);
+       
+       
+
+        foreach (var money in _moneys)
+        {
+            if (_moneys == null)
+                return;
+            
+            Vector3 movingMoneyPos = new Vector3(Random.Range(-.5f,.5f), .65f, 2);
+            
+            Money jumpingMoney = money.GetComponent<Money>();
+            
+            jumpingMoney.transform.DOJump(transform.position + movingMoneyPos, 1.5f, 1, 1).OnComplete(() => EndOfJump(jumpingMoney));
+            jumpingMoney.Initialize(MONEY_VALUE);
+        }
+       
     }
+
+    private void EndOfJump(Money money)
+    {
+        
+        money.IsJumped = true;
+        money.SetLoopAnimation();
+    }
+    
+    // private void SpawnMoney() 
+    // {
+    //     Vector3 spawnPoint = transform.position + Vector3.up * SPAWN_OFFSET;
+    //     Money money = PoolingSystem.Instance.InstantiateAPS(MONEY_POOL_ID, spawnPoint).GetComponentInChildren<Money>();
+    //     money.Initialize(MONEY_VALUE);
+    // }
 
     private void SpawnBigMoney()
     {
