@@ -7,6 +7,7 @@ using UnityEngine;
 public class FinishLine : MonoBehaviour
 {
     public static FinishLine Instance;
+    [SerializeField] private ParticleSystem _confettiParticle1, _confettiParticle2;
 
     private void Awake()
     {
@@ -24,6 +25,8 @@ public class FinishLine : MonoBehaviour
         {
             
             //GameManager.Instance.CompeleteStage(true);
+            _confettiParticle1.Play();
+            _confettiParticle2.Play();
             HCB.Core.EventManager.OnEnteredEndGame.Invoke();
             IsEndGame = true;
             //Player.Instance.IsWin = true;
