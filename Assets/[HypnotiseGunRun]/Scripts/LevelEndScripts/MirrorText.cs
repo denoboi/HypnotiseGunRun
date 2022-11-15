@@ -23,10 +23,12 @@ public class MirrorText : MonoBehaviour
     {
         _durability = durability;
         _durabilityText.text = _durability.ToString();
-        if (durability <= 0)
+
+        if (_durability <= 0)
         {
             _durabilityText.enabled = false;
         }
+        
     }
 
 }

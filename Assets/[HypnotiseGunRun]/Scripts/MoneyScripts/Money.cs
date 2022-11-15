@@ -77,13 +77,13 @@ public class Money : CollectableBase
         base.Collect(collector);
         
         PoolingSystem.Instance.DestroyAPS(gameObject);
+        
     }
     public void SetLoopAnimation()
     {
         DOTween.Kill(_moneyLoopTweenID);
         transform.DOMoveY(transform.position.y + LOOP_OFFSET, LOOP_MOVE_DURATION).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo).SetId(_moneyLoopTweenID);
     }
-
 
     
     protected void MovementTween(Transform target, Action onComplete) 
@@ -94,6 +94,5 @@ public class Money : CollectableBase
         transform.SetParent(target);
         transform.DOLocalMove(Vector3.zero, COLLECT_MOVEMENT_DURATION).SetEase(Ease.Linear).SetTarget(_movementTweenID).OnComplete(() => onComplete?.Invoke());
     }
-   
     
 }

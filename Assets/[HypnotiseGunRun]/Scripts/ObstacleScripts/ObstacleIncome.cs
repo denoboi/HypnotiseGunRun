@@ -35,13 +35,13 @@ public class ObstacleIncome : MonoBehaviour
     private void OnEnable()                                                 
     {
         ObstacleDestruction.OnObstacleDestroyed.AddListener(MoveMoney);
-        ObstacleDestruction.OnBigObstacleDestroyed.AddListener(SpawnBigMoney);
+       // ObstacleDestruction.OnBigObstacleDestroyed.AddListener(SpawnBigMoney);
     }
 
     private void OnDisable()
     {
         ObstacleDestruction.OnObstacleDestroyed.RemoveListener(MoveMoney);
-        ObstacleDestruction.OnBigObstacleDestroyed.RemoveListener(SpawnBigMoney);
+        //ObstacleDestruction.OnBigObstacleDestroyed.RemoveListener(SpawnBigMoney);
     }
 
 
@@ -60,7 +60,7 @@ public class ObstacleIncome : MonoBehaviour
             
             Money jumpingMoney = money.GetComponent<Money>();
             
-            jumpingMoney.transform.DOJump(transform.position + movingMoneyPos, 1.3f, 1, Random.Range(.6f, 1f)).OnComplete(() => EndOfJump(jumpingMoney));
+            jumpingMoney.transform.DOJump(transform.position + movingMoneyPos, 1.3f, 1, 1).OnComplete(() => EndOfJump(jumpingMoney));
             jumpingMoney.Initialize(MONEY_VALUE);
         }
        

@@ -26,7 +26,11 @@ public class LevelEndTargetDurabilities : MonoBehaviour
             {
                 currentTargetDurability = i;
             }
-            transform.GetChild(i).GetComponentInChildren<MirrorText>().SetDurability(durabilities[currentTargetDurability]);
+
+            Transform textParent = transform.GetChild(i).GetComponentInChildren<MirrorText>().transform.parent;
+            
+            textParent.GetComponentsInChildren<MirrorText>()[0].SetDurability(durabilities[currentTargetDurability]);
+            textParent.GetComponentsInChildren<MirrorText>()[1].SetDurability(durabilities[currentTargetDurability]);
             //transform.GetChild(i+1).GetComponentInChildren<MirrorText>().SetDurability(durabilities[currentTargetDurability]);
 
 
