@@ -56,11 +56,11 @@ public class ObstacleIncome : MonoBehaviour
             if (_moneys == null)
                 return;
             
-            Vector3 movingMoneyPos = new Vector3(Random.Range(-.5f,.5f), .65f, 2);
+            Vector3 movingMoneyPos = new Vector3(Random.Range(-1f, 1f), .65f, Random.Range(2f,3f));
             
             Money jumpingMoney = money.GetComponent<Money>();
             
-            jumpingMoney.transform.DOJump(transform.position + movingMoneyPos, 1.5f, 1, 1).OnComplete(() => EndOfJump(jumpingMoney));
+            jumpingMoney.transform.DOJump(transform.position + movingMoneyPos, 1.3f, 1, .6f).OnComplete(() => EndOfJump(jumpingMoney));
             jumpingMoney.Initialize(MONEY_VALUE);
         }
        

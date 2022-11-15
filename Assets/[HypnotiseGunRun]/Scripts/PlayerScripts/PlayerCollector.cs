@@ -8,11 +8,11 @@ public class PlayerCollector : Collector
     private void OnEnable()
     {
       
-        //HCB.Core.EventManager.OnPlayerFailed.AddListener(() => CanCollect = false); 
+        HCB.Core.EventManager.OnPlayerFailed.AddListener(() => CanCollect = false); 
     }
-
+    
     private void OnDisable()
     {
-        //HCB.Core.EventManager.OnPlayerFailed.RemoveListener(() => CanCollect = false);
+        HCB.Core.EventManager.OnPlayerFailed.RemoveListener(() => CanCollect = false);
     }
 }

@@ -7,6 +7,8 @@ namespace HCB.CollectableSystem
 {
     public class Collector : MonoBehaviour
     {
+        private bool _canCollect = true;
+        public bool CanCollect { get => _canCollect; protected set => _canCollect = value; }
         private void OnTriggerEnter(Collider other)
         {
             ICollectable collectable = other.GetComponentInChildren<ICollectable>();
