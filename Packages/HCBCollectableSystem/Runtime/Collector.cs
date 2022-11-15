@@ -11,7 +11,7 @@ namespace HCB.CollectableSystem
         public bool CanCollect { get => _canCollect; protected set => _canCollect = value; }
         private void OnTriggerEnter(Collider other)
         {
-            ICollectable collectable = other.GetComponentInChildren<ICollectable>();
+            ICollectable collectable = other.GetComponentInChildren<ICollectable>(); //burada hata veriyor dikkat parent olacak.
             
             if (collectable != null)
             {

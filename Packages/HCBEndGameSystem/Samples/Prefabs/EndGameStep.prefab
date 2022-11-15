@@ -450,6 +450,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MirrorObstacle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6116586368085183981, guid: 1de822a6cfcbed4419745c9866fa1e41, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6893227937609717591, guid: 1de822a6cfcbed4419745c9866fa1e41, type: 3}
       propertyPath: m_RootOrder
       value: 2

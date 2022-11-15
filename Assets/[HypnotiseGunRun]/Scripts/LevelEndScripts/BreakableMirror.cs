@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using HCB.Core;
+using HCB.PoolingSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,6 +17,11 @@ public class BreakableMirror : MonoBehaviour
 
     private Transform _shatteredPiece;
     private Transform _normalPiece;
+    
+    private const string BIG_MONEY_POOL_ID = "BigMoney";
+    private const string MONEY_POOL_ID = "Money";
+    private const float SPAWN_OFFSET = 0.5f;
+    private const int MONEY_VALUE = 1;
     
     
     private int _initialObstacleLevel = 12;
@@ -110,8 +116,16 @@ public class BreakableMirror : MonoBehaviour
         }
 
         
-      
+        SpawnMoney();
         HapticManager.Haptic(HapticTypes.RigidImpact);
+    }
+    
+    
+    private void SpawnMoney() 
+    {
+        Vector3 spawnPoint = transform.position + Vector3.up * SPAWN_OFFSET;
+        Money money = PoolingSystem.Instance.InstantiateAPS(BIG_MONEY_POOL_ID, spawnPoint).GetComponentInChildren<Money>();
+        money.Initialize(MONEY_VALUE);
     }
     
     

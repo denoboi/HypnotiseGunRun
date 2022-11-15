@@ -39,13 +39,13 @@ public class ProjectileCollision : MonoBehaviour
             
             MirrorHitCheck();
 
-            mirror.MirrorLevel--;
-            mirrorText.SetDurability(mirror.MirrorLevel);
+            mirrorText._durability--;
+            
             mirror.OnHit.Invoke();
 
-            if (mirror.MirrorLevel <= 0)
+            if (mirrorText._durability <= 0)
             {
-                mirror.MirrorLevel = 0;
+                mirrorText._durability = 0;
                 mirror.DestructMirror();
             }
             

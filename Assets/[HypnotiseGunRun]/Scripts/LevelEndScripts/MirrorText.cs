@@ -9,7 +9,7 @@ public class MirrorText : MonoBehaviour
     private BreakableMirror _breakableMirror;
     private BreakableMirror BreakableMirror => _breakableMirror ??= GetComponent<BreakableMirror>();
         
-    [SerializeField] private int _durability = 2;
+    public int _durability = 2;
     private TextMeshPro _durabilityText;
 
   

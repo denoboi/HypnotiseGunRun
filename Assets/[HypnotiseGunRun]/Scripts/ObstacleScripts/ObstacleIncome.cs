@@ -60,7 +60,7 @@ public class ObstacleIncome : MonoBehaviour
             
             Money jumpingMoney = money.GetComponent<Money>();
             
-            jumpingMoney.transform.DOJump(transform.position + movingMoneyPos, 1.3f, 1, .6f).OnComplete(() => EndOfJump(jumpingMoney));
+            jumpingMoney.transform.DOJump(transform.position + movingMoneyPos, 1.3f, 1, Random.Range(.6f, 1f)).OnComplete(() => EndOfJump(jumpingMoney));
             jumpingMoney.Initialize(MONEY_VALUE);
         }
        
