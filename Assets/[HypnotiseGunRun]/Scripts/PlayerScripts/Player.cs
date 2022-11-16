@@ -9,6 +9,7 @@ using UnityEngine;
 public class Player : SplineCharacter
 {
     
+    public bool IsOnEndGame { get; set; }
     public bool IsFailed { get; set; }
     public bool IsWin { get; set; }
     

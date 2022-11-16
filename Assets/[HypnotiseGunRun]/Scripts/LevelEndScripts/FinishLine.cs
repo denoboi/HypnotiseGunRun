@@ -29,6 +29,7 @@ public class FinishLine : MonoBehaviour
             _confettiParticle2.Play();
             HCB.Core.EventManager.OnEnteredEndGame.Invoke();
             IsEndGame = true;
+            Player.Instance.IsOnEndGame = true;
             //Player.Instance.IsWin = true;
 
         }

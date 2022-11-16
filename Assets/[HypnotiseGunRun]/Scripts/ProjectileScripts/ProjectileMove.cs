@@ -131,8 +131,16 @@ public class ProjectileMove : MonoBehaviour
     [Button]
     private void MoveProjectile()
     {
-        //if (!_canShoot) return;
-        Rigidbody.AddForce(Projectile.Direction, ForceMode.Impulse);
+        if (!Player.Instance.IsOnEndGame)
+        {
+            Rigidbody.AddForce(Projectile.Direction, ForceMode.Impulse); 
+        }
+        
+
+        else if (Player.Instance.IsOnEndGame)
+        {
+            Rigidbody.AddForce(Projectile.Direction * 2, ForceMode.Impulse);
+        }
         
 
         //transform.DOJump(new Vector3(transform.position.x, transform.position.y, transform.position.z +5) , 2f, 5, 5f).SetLoops(-1);
