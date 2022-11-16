@@ -18,8 +18,7 @@ public class PlayerFireRate : MonoBehaviour
         get => _fireRate;
         set => _fireRate = value;
     }
-    //public IdleStat FireRateIdleStat => UpgradeManager.Instance.FireRate;
-    
+    public IdleStat FireRateIdleStat => UpgradeManager.Instance.FireRate;
     //private float InitialFireRate => (float)GameManager.Instance.UpgradeData.FireRateStat.CurrentValue;
     
     private const int MAX_FIRE_RATE = 100;
@@ -33,7 +32,7 @@ public class PlayerFireRate : MonoBehaviour
     private void OnEnable()
     {
         HCB.Core.EventManager.OnFireRateGateInteracted.AddListener(IncreaseFireRate);
-        //LevelManager.Instance.OnLevelStart.AddListener(SetInitialFireRate);
+        LevelManager.Instance.OnLevelStart.AddListener(SetInitialFireRate);
         
     }
     
@@ -42,7 +41,7 @@ public class PlayerFireRate : MonoBehaviour
         if (Managers.Instance == null)
             return;
         HCB.Core.EventManager.OnFireRateGateInteracted.RemoveListener(IncreaseFireRate);
-        //LevelManager.Instance.OnLevelStart.RemoveListener(SetInitialFireRate);
+        LevelManager.Instance.OnLevelStart.RemoveListener(SetInitialFireRate);
     
     }
     
@@ -54,8 +53,8 @@ public class PlayerFireRate : MonoBehaviour
         FireRate = Mathf.Min(FireRate, MAX_FIRE_RATE);
     }
     
-    // private void SetInitialFireRate()
-    // {
-    //     FireRate = (float)FireRateIdleStat.CurrentValue;
-    // }
+    private void SetInitialFireRate()
+    {
+        FireRate = (int)FireRateIdleStat.CurrentValue;
+    }
 }
