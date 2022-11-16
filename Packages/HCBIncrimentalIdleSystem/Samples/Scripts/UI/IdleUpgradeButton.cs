@@ -70,6 +70,8 @@ namespace HCB.IncrimantalIdleSystem.Examples
             Button.interactable = GameManager.Instance.PlayerData.CurrencyData[IdleStat.ExchangeType] > IdleStat.CurrentCost;
             StatLevelText.SetText("" + (IdleStat.Level + 1));
             EventManager.OnPlayerDataChange.Invoke();
+            EventManager.OnPlayerUpgraded.Invoke();
+
             StatCostText.SetText(IdleStat.CurrentCost.ToString());
         }
     }

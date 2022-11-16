@@ -177,6 +177,12 @@ MonoBehaviour:
     AllowGrow: 1
     AutoDestroy: 1
     clones: []
+  - ID: UpgradeParticle
+    SourcePrefab: {fileID: 3767206883215730155, guid: 0c6dc63ad1062ae44bcb2da7267556dc, type: 3}
+    MinNumberOfObject: 0
+    AllowGrow: 1
+    AutoDestroy: 1
+    clones: []
   DefaultCount: 10
 --- !u!4 &334324349
 Transform:

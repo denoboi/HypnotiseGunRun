@@ -8,7 +8,12 @@ public class TreasureFinish : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        //Player.Instance.IsWin = true;
-        GameManager.Instance.CompeleteStage(true);
+        Interactor interactor = other.GetComponentInParent<Interactor>();
+        if (interactor != null)
+        {
+            Player.Instance.IsWin = true;
+            GameManager.Instance.CompeleteStage(true);
+        }
+       
     }
 }
