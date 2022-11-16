@@ -20,13 +20,17 @@ public class ObstacleIncome : MonoBehaviour
         ? _obstacleDestruction = GetComponent<ObstacleDestruction>()
         : _obstacleDestruction;
 
-
+    
     private const string BIG_MONEY_POOL_ID = "BigMoney";
     private const string MONEY_POOL_ID = "Money";
     private const float SPAWN_OFFSET = 0.5f;
     private const int MONEY_VALUE = 1;
     private string _movementTweenID;
 
+    [SerializeField] private float _jumpOffset1 = 2f;
+    [SerializeField] private float _jumpOffset2 = 3f;
+    
+    
     private void Awake()
     {
         _movementTweenID = GetInstanceID() + "MovementTweenID";
@@ -56,7 +60,7 @@ public class ObstacleIncome : MonoBehaviour
             if (_moneys == null)
                 return;
             
-            Vector3 movingMoneyPos = new Vector3(Random.Range(-1f, 1f), .65f, Random.Range(2f,3f));
+            Vector3 movingMoneyPos = new Vector3(Random.Range(-1f, 1f), .65f, Random.Range(_jumpOffset1,_jumpOffset2));
             
             Money jumpingMoney = money.GetComponent<Money>();
             
