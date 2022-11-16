@@ -7,7 +7,16 @@ using UnityEngine;
 public class MirrorText : MonoBehaviour
 {
     private BreakableMirror _breakableMirror;
-    private BreakableMirror BreakableMirror => _breakableMirror ??= GetComponent<BreakableMirror>();
+
+    public BreakableMirror BreakableMirror
+    {
+        get
+        {
+            return _breakableMirror == null
+                ? _breakableMirror = GetComponentInChildren<BreakableMirror>()
+                : _breakableMirror;
+        }
+    }
         
     public int _durability = 2;
     private TextMeshPro _durabilityText;
@@ -15,12 +24,16 @@ public class MirrorText : MonoBehaviour
   
     private void Start()
     {
+        
         _durabilityText = GetComponentInChildren<TextMeshPro>();
     }
     
     
+    
+    
     public void SetDurability(int durability)
     {
+        
         _durability = durability;
         _durabilityText.text = _durability.ToString();
 

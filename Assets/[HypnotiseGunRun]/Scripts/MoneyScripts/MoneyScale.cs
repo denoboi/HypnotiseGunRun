@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -22,6 +23,8 @@ public class MoneyScale : MonoBehaviour
         _defaultScale = _body.localScale;
         _scaleTweenID = GetInstanceID() + "ScaleTweenID";
     }
+
+   
 
     private void OnEnable()
     {

@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
         Health--;
        
         Health = Mathf.Max(Health, 0);
-        Debug.Log("ENEMYBAM");
+       // Debug.Log("ENEMYBAM");
         CheckKill();
     }
 

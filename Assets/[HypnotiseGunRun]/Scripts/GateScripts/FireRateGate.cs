@@ -14,7 +14,7 @@ public class FireRateGate : GateBase
       if (interactor != null)
       {
          
-         // CreateParticle(interactor.transform);
+         CreateParticle(interactor.transform);
          HCB.Core.EventManager.OnFireRateGateInteracted.Invoke();
          Debug.Log("FireRate");
        

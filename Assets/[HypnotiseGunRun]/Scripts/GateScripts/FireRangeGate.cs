@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class FireRangeGate : GateBase
 {
-  
-    
     private void OnTriggerEnter(Collider other)
     {
         Interactor interactor = other.GetComponentInChildren<Interactor>();
@@ -16,12 +14,10 @@ public class FireRangeGate : GateBase
         {
             HapticManager.Haptic(HapticTypes.RigidImpact);
             HCB.Core.EventManager.OnFireRangeGateInteracted.Invoke();
-            //CreateParticle(interactor.transform);
-            Debug.Log("FireRange"); 
-            
+            CreateParticle(interactor.transform);
+            Debug.Log("FireRange");
+
             OnInteracted.Invoke();
         }
     }
-    
-    
 }

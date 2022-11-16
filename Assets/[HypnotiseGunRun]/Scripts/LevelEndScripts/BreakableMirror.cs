@@ -21,12 +21,16 @@ public class BreakableMirror : MonoBehaviour
     private const string BIG_MONEY_POOL_ID = "BigMoney";
     private const string MONEY_POOL_ID = "Money";
     private const float SPAWN_OFFSET = 0.5f;
-    private const int MONEY_VALUE = 1;
-    
-    
-    private int _initialObstacleLevel = 12;
+    private const int MONEY_VALUE = 2;
 
-    [FormerlySerializedAs("ObstacleLevel")] public int MirrorLevel = 5;
+    private MirrorText _mirrorText;
+
+    public MirrorText MirrorText => _mirrorText == null ? _mirrorText = GetComponent<MirrorText>() : _mirrorText;
+    
+    
+    
+
+    [FormerlySerializedAs("ObstacleLevel")] public int MirrorLevel;
     
 
     private bool _isDestructed;
@@ -50,19 +54,22 @@ public class BreakableMirror : MonoBehaviour
     private void Awake()
     {
         Init();
+        
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
         _normalPiece = transform.GetChild(0).GetChild(0);
         _shatteredPiece = transform.GetChild(0).GetChild(1);
-        
+        yield return new WaitForSeconds(2.5f);
+        MirrorLevel = MirrorText._durability;
+
     }
 
 
     private void Init()
     {
-        _initialObstacleLevel = MirrorLevel;
+        
         
         foreach (var obstacle in _obstaclePieces)
         {
@@ -111,7 +118,7 @@ public class BreakableMirror : MonoBehaviour
 
             obstacle.GetComponent<MeshCollider>().isTrigger = false;
             _shrinkedVector = new Vector3(0.0001f, 0.0001f, 0.0001f);
-            obstacle.transform.DOScale(_shrinkedVector, 1).SetDelay(.9f).OnComplete(() => {gameObject.SetActive(false);});
+            obstacle.transform.DOScale(_shrinkedVector, 1).SetDelay(.9f).OnComplete(() => {obstacle.gameObject.SetActive(false);});
             
         }
 

@@ -20,7 +20,7 @@ public class ObstacleIncome : MonoBehaviour
         ? _obstacleDestruction = GetComponent<ObstacleDestruction>()
         : _obstacleDestruction;
 
-    
+
     private const string BIG_MONEY_POOL_ID = "BigMoney";
     private const string MONEY_POOL_ID = "Money";
     private const float SPAWN_OFFSET = 0.5f;
@@ -29,17 +29,17 @@ public class ObstacleIncome : MonoBehaviour
 
     [SerializeField] private float _jumpOffset1 = 2f;
     [SerializeField] private float _jumpOffset2 = 3f;
-    
-    
+
+
     private void Awake()
     {
         _movementTweenID = GetInstanceID() + "MovementTweenID";
     }
 
-    private void OnEnable()                                                 
+    private void OnEnable()
     {
         ObstacleDestruction.OnObstacleDestroyed.AddListener(MoveMoney);
-       // ObstacleDestruction.OnBigObstacleDestroyed.AddListener(SpawnBigMoney);
+        // ObstacleDestruction.OnBigObstacleDestroyed.AddListener(SpawnBigMoney);
     }
 
     private void OnDisable()
@@ -52,31 +52,29 @@ public class ObstacleIncome : MonoBehaviour
     private void MoveMoney()
     {
         DOTween.Kill(_movementTweenID);
-       
-       
+
 
         foreach (var money in _moneys)
         {
             if (_moneys == null)
                 return;
-            
-            Vector3 movingMoneyPos = new Vector3(Random.Range(-1f, 1f), .65f, Random.Range(_jumpOffset1,_jumpOffset2));
-            
+
+            Vector3 movingMoneyPos = new Vector3(Random.Range(-1f, 1f), .65f, Random.Range(_jumpOffset1, _jumpOffset2));
+
             Money jumpingMoney = money.GetComponent<Money>();
-            
-            jumpingMoney.transform.DOJump(transform.position + movingMoneyPos, 1.3f, 1, 1).OnComplete(() => EndOfJump(jumpingMoney));
+
+            jumpingMoney.transform.DOJump(transform.position + movingMoneyPos, 1.3f, 1, 1)
+                .OnComplete(() => EndOfJump(jumpingMoney));
             jumpingMoney.Initialize(MONEY_VALUE);
         }
-       
     }
 
     private void EndOfJump(Money money)
     {
-        
         money.IsJumped = true;
         money.SetLoopAnimation();
     }
-    
+
     // private void SpawnMoney() 
     // {
     //     Vector3 spawnPoint = transform.position + Vector3.up * SPAWN_OFFSET;

@@ -60,7 +60,7 @@ public class Money : CollectableBase
         
         IsCollected = true;
         OnCollected.Invoke();
-        IsJumped = false;
+        //IsJumped = false;
         
 
         MovementTween(collector.transform, () => 

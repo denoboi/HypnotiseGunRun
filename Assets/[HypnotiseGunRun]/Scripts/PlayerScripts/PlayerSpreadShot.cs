@@ -45,6 +45,8 @@ public class PlayerSpreadShot : MonoBehaviour
         Projectile leftBall = PlayerProjectileCreator.CreateProjectile();
         
         leftBall.Initialize(_leftBallOffset);
+        
+        
     }
     
     private void EnableSpreadShot()

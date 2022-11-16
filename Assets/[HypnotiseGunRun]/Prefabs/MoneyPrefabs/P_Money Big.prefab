@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2600412136316479963}
   - component: {fileID: 3491285707538123597}
   - component: {fileID: 7465708526261823360}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: PileOfCash (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ BoxCollider:
   m_GameObject: {fileID: 839415774164938360}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.838228, y: 0.41997227, z: 0.77294767}
   m_Center: {x: 0, y: 0.20998608, z: -0.000000044703484}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 5224459944083994850}
   - component: {fileID: 8155965081001465984}
   - component: {fileID: 3297087424503677945}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: PileOfCash (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ BoxCollider:
   m_GameObject: {fileID: 1123638531753473759}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.838228, y: 0.41997227, z: 0.77294767}
   m_Center: {x: 0, y: 0.20998608, z: -0.000000044703484}
@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1475727789646902892}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 7292829391221366737}
   - component: {fileID: 149351262357587179}
   - component: {fileID: 4955033766989264427}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: PileOfCash (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ BoxCollider:
   m_GameObject: {fileID: 2975491250210563744}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.838228, y: 0.41997227, z: 0.77294767}
   m_Center: {x: 0, y: 0.20998608, z: -0.000000044703484}
@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 1920605912463302465}
   - component: {fileID: 4969176734660557631}
   - component: {fileID: 9043115331310671718}
+  - component: {fileID: 5992759192726289265}
   m_Layer: 17
   m_Name: P_Money Big
   m_TagString: Untagged
@@ -524,6 +525,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.75707495, y: 0.62702197, z: 0.6619172}
   m_Center: {x: -0.019574225, y: 0.18648902, z: 0.15836644}
+--- !u!54 &5992759192726289265
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006345843782631295}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6494717350923251444
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +553,7 @@ GameObject:
   - component: {fileID: 7405558520586173419}
   - component: {fileID: 4693071272600866593}
   - component: {fileID: 5812103481845168839}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: PileOfCash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +632,7 @@ BoxCollider:
   m_GameObject: {fileID: 6494717350923251444}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.838228, y: 0.41997227, z: 0.77294767}
   m_Center: {x: 0, y: 0.20998608, z: -0.000000044703484}
@@ -631,7 +648,7 @@ GameObject:
   - component: {fileID: 1035625632667097291}
   - component: {fileID: 496586463040934496}
   - component: {fileID: 2682437994404594760}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: PileOfCash (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +727,7 @@ BoxCollider:
   m_GameObject: {fileID: 7375509489963756172}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.838228, y: 0.41997227, z: 0.77294767}
   m_Center: {x: 0, y: 0.20998608, z: -0.000000044703484}
@@ -726,7 +743,7 @@ GameObject:
   - component: {fileID: 3686755420220867922}
   - component: {fileID: 4643874584146598514}
   - component: {fileID: 375149052825088434}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: PileOfCash (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -805,7 +822,7 @@ BoxCollider:
   m_GameObject: {fileID: 8209603291889996777}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.838228, y: 0.41997227, z: 0.77294767}
   m_Center: {x: 0, y: 0.20998608, z: -0.000000044703484}
@@ -860,9 +877,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1743292720057090454, guid: 74fbeee3f4511144a9b92611e30ede8d, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743292720057093310, guid: 74fbeee3f4511144a9b92611e30ede8d, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 1743292720057129048, guid: 74fbeee3f4511144a9b92611e30ede8d, type: 3}
       propertyPath: m_Name
       value: orb
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743292720057129048, guid: 74fbeee3f4511144a9b92611e30ede8d, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74fbeee3f4511144a9b92611e30ede8d, type: 3}

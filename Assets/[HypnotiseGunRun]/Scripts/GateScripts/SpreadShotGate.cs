@@ -5,29 +5,13 @@ using UnityEngine;
 
 public class SpreadShotGate : GateBase
 {
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     Interactor splineCharacter = other.GetComponentInParent<Interactor>();
-    //
-    //     if (splineCharacter != null)
-    //     {
-    //         HapticManager.Haptic(HapticTypes.RigidImpact);
-    //
-    //         HCB.Core.EventManager.OnSpreadShotGateInteracted.Invoke();
-    //         OnInteracted.Invoke();
-    //         Debug.Log("SpreadShot");
-    //     }
-    // }
-    
-  
-   
     private void OnTriggerEnter(Collider other)
     {
         Interactor interactor = other.GetComponentInChildren<Interactor>();
 
         if (interactor != null)
         {
-           //CreateParticle(interactor.transform);
+           CreateParticle(interactor.transform);
            
             HapticManager.Haptic(HapticTypes.RigidImpact);
             

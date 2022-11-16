@@ -11,7 +11,7 @@ namespace HCB.CollectableSystem
         public bool CanCollect { get => _canCollect; protected set => _canCollect = value; }
         private void OnTriggerEnter(Collider other)
         {
-            ICollectable collectable = other.GetComponentInChildren<ICollectable>(); //burada hata veriyor dikkat parent olacak.
+            ICollectable collectable = other.GetComponentInParent<ICollectable>(); //burada hata veriyor dikkat parent olacak.
             
             if (collectable != null)
             {
@@ -23,7 +23,7 @@ namespace HCB.CollectableSystem
 
         private void OnCollisionEnter(Collision collision)
         {
-            ICollectable collectable = collision.collider.GetComponentInChildren<ICollectable>();
+            ICollectable collectable = collision.collider.GetComponentInParent<ICollectable>();
             if (collectable != null)
             {
                 collectable.Collect(this);

@@ -16,34 +16,24 @@ public abstract class GateBase : MonoBehaviour, IInteractable
     private string _currentParticleID = DEFAULT_GATE_POOL_PARTICLE;
     public string CurrentParticleID { get => _currentParticleID; protected set => _currentParticleID = value; }
 
-    protected const string DEFAULT_GATE_POOL_PARTICLE = "PositiveGateParticle"; 
+    protected const string DEFAULT_GATE_POOL_PARTICLE = "GateParticle"; 
     
 
-    // protected virtual void OnTriggerEnter(Collider other)
-    // {
-    //     Interactor interactor = other.GetComponentInChildren<Interactor>();
-    //
-    //     if (interactor != null)
-    //     {
-    //         CreateParticle(interactor.transform);
-    //         Debug.LogError("Interacted Gate");
-    //     }
-    // }
-
-    // private void CreateParticle(Transform parent) 
-    // {
-    //     GameObject particleObject = PoolingSystem.Instance.InstantiateAPS(CurrentParticleID, parent.position);
-    //    particleObject.transform.SetParent(parent);
-    //     particleObject.GetComponentInChildren<ParticleSystem>().Play();
-    //     
-    //     
-    // }   
+   
+    protected void CreateParticle(Transform parent) 
+    {
+        GameObject particleObject = PoolingSystem.Instance.InstantiateAPS(CurrentParticleID, parent.position);
+       particleObject.transform.SetParent(parent);
+        particleObject.GetComponentInChildren<ParticleSystem>().Play();
+        
+        
+    }   
 
     protected virtual void GateInteract(Transform parent)
     {
         Debug.Log("InteractedGate");
         HapticManager.Haptic(HapticTypes.Selection);
-        // CreateParticle(parent);
+        //CreateParticle(parent);
         
     }
     

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1475727789646902892}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 5866518686095438926}
   - component: {fileID: 7405558520586173419}
   - component: {fileID: 4693071272600866593}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: PileOfCash
   m_TagString: Untagged
   m_Icon: {fileID: 0}

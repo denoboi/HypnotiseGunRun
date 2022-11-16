@@ -17,6 +17,7 @@ public class EnemyRagdoll : MonoBehaviour
 
     private void OnEnable()
     {
+        
        Enemy.OnKilled.AddListener(EnableRagdoll);
     }
 

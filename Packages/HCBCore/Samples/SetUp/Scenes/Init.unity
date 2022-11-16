@@ -171,6 +171,12 @@ MonoBehaviour:
     AllowGrow: 1
     AutoDestroy: 1
     clones: []
+  - ID: GateParticle
+    SourcePrefab: {fileID: 3767206883215730155, guid: 0c6dc63ad1062ae44bcb2da7267556dc, type: 3}
+    MinNumberOfObject: 0
+    AllowGrow: 1
+    AutoDestroy: 1
+    clones: []
   DefaultCount: 10
 --- !u!4 &334324349
 Transform:
@@ -319,3 +325,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VirtualCameras: []
   CameraBrain: {fileID: 0}
+--- !u!114 &8475320319740837092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8475320319740837090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358f64c567e625a4a90e4ee9324d94df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireRate: {fileID: 11400000, guid: 0cbfbdba4c107e849b5f00a58bb4d216, type: 2}

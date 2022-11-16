@@ -887,7 +887,7 @@ PrefabInstance:
     - target: {fileID: 4933556380829357410, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
       propertyPath: idleStat
       value: 
-      objectReference: {fileID: 11400000, guid: 082b3be0fc3946140940723f9ee679f4, type: 2}
+      objectReference: {fileID: 11400000, guid: 0cbfbdba4c107e849b5f00a58bb4d216, type: 2}
     - target: {fileID: 4933556380829357411, guid: 8b53c2f68301148f793bd44651542a98, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
