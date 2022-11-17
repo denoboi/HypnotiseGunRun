@@ -17,3 +17,9 @@ MonoBehaviour:
     LoadLevelID: Level - Onboarding
   - LevelTypes: 
     LoadLevelID: Level - 01
+  - LevelTypes: 
+    LoadLevelID: Level - 02
+  - LevelTypes: 
+    LoadLevelID: Level - 03
+  - LevelTypes: 
+    LoadLevelID: Level - 04

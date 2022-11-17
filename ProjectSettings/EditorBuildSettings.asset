@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/[HypnotiseGunRun]/Levels/Level - 01.unity
     guid: 5f633d8145a078349b0e85eaea55db28
+  - enabled: 1
+    path: Assets/[HypnotiseGunRun]/Levels/Level - 02.unity
+    guid: e81520b25a56ea6468846aa762d939ff
+  - enabled: 1
+    path: Assets/[HypnotiseGunRun]/Levels/Level - 03.unity
+    guid: cedcedb3f8a166b4bac35ffce0b9294e
+  - enabled: 1
+    path: Assets/[HypnotiseGunRun]/Levels/Level - 04.unity
+    guid: d92d2443049fa7943b803c3a01d22e47
   m_configObjects: {}
